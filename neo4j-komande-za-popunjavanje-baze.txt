@@ -1,0 +1,13 @@
+CREATE(Direktor:Vlasnik {ime: 'Ime', prezime: 'Prezime',datum_rodjenja:'2019.06.03' , jmbg: 123, broj_telefona: '064123456'})
+
+CREATE(Zgrada:PoslovniProstor {kvadratura: 1000.30, adresa: 'Neka Ulica 2'})
+
+MATCH
+  (a:Vlasnik),
+  (b:PoslovniProstor)
+WHERE a.ime = 'Ime' AND b.adresa = 'Neka Ulica 2'
+CREATE (a)-[r:Pripada]->(b)
+RETURN type(r)
+
+MATCH (n)
+DETACH DELETE n
