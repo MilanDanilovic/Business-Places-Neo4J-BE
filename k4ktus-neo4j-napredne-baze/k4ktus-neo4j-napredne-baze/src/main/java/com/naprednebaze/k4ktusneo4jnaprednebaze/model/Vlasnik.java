@@ -13,14 +13,14 @@ public class Vlasnik {
     private Long id; //graphId
     private String ime;
     private String prezime;
-    private LocalDate datum_rodjenja;
+    private String datum_rodjenja;
     private Long jmbg;
     private String broj_telefona;
 
     @Relationship(type = "Poseduje" , direction = Relationship.Direction.OUTGOING)
     private List<PoslovniProstor> poslovniProstori;
 
-    public Vlasnik(String ime, String prezime,LocalDate datum_rodjenja, Long jmbg, String broj_telefona, List<PoslovniProstor> poslovniProstori) {
+    public Vlasnik(String ime, String prezime,String datum_rodjenja, Long jmbg, String broj_telefona, List<PoslovniProstor> poslovniProstori) {
         this.id = null;
         this.ime = ime;
         this.prezime = prezime;

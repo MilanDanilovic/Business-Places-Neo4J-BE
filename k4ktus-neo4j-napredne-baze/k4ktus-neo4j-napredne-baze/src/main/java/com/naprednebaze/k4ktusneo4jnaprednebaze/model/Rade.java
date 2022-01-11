@@ -17,20 +17,20 @@ public class Rade {
     private Long id;
 
     @TargetNode
-    private final Firma firma;
+    private final Zaposleni zaposleni;
 
     @Property
-    private LocalDate datum_od;
+    private String datum_od;
 
     @Property
-    private LocalDate datum_do;
+    private String datum_do;
 
     @Property
     private String pozicija;
 
-    public Rade(Firma firma, LocalDate datum_od, LocalDate datum_do, String pozicija) {
+    public Rade(Zaposleni zaposleni, String datum_od, String datum_do, String pozicija) {
         this.id = null;
-        this.firma = firma;
+        this.zaposleni = zaposleni;
         this.datum_od = datum_od;
         this.datum_do = datum_do;
         this.pozicija = pozicija;
@@ -40,7 +40,7 @@ public class Rade {
         if (this.id.equals(id)) {
             return this;
         } else {
-            Rade newObject = new Rade(this.firma, this.datum_od, this.datum_do, this.pozicija);
+            Rade newObject = new Rade(this.zaposleni, this.datum_od, this.datum_do, this.pozicija);
             newObject.id = id;
             return newObject;
         }

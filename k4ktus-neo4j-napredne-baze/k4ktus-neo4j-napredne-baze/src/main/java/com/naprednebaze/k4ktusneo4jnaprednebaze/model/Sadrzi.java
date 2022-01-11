@@ -14,18 +14,18 @@ public class Sadrzi {
     private Long id;
 
     @TargetNode
-    private final PoslovniProstor poslovniProstor;
+    private final Kancelarija kancelarija;
 
-    public Sadrzi(PoslovniProstor poslovniProstor) {
+    public Sadrzi(Kancelarija kancelarija) {
         this.id = null;
-        this.poslovniProstor = poslovniProstor;
+        this.kancelarija = kancelarija;
     }
 
     public Sadrzi withId(Long id) {
         if (this.id.equals(id)) {
             return this;
         } else {
-            Sadrzi newObject = new Sadrzi(this.poslovniProstor);
+            Sadrzi newObject = new Sadrzi(this.kancelarija);
             newObject.id = id;
             return newObject;
         }

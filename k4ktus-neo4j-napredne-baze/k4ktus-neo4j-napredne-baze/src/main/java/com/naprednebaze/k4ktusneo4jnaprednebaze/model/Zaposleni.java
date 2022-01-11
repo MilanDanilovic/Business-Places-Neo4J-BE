@@ -15,11 +15,11 @@ public class Zaposleni {
     private Long id;
     private String ime;
     private String prezime;
-    private LocalDate datum_rodjenja;
+    private String datum_rodjenja;
     private String pol;
     private Long jmbg;
 
-    public Zaposleni(String ime, String prezime, LocalDate datum_rodjenja, String pol, Long jmbg) {
+    public Zaposleni(String ime, String prezime, String datum_rodjenja, String pol, Long jmbg) {
         this.id = null;
         this.ime = ime;
         this.prezime = prezime;

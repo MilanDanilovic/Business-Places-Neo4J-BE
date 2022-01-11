@@ -14,22 +14,22 @@ public class Poseduje {
     private Long id;
 
     @TargetNode
-    private final Vlasnik vlasnik;
+    private final PoslovniProstor poslovniProstor;
 
     @Property
-    private LocalDate datum_kupovine;
+    private String datum_kupovine;
 
-    public Poseduje(Vlasnik vlasnik, LocalDate datum_kupovine) {
+    public Poseduje(PoslovniProstor poslovniProstor, String datum_kupovine) {
         this.id = null;
         this.datum_kupovine = datum_kupovine;
-        this.vlasnik = vlasnik;
+        this.poslovniProstor = poslovniProstor;
     }
 
     public Poseduje withId(Long id) {
         if (this.id.equals(id)) {
             return this;
         } else {
-            Poseduje newObject = new Poseduje(this.vlasnik, this.datum_kupovine);
+            Poseduje newObject = new Poseduje(this.poslovniProstor, this.datum_kupovine);
             newObject.id = id;
             return newObject;
         }

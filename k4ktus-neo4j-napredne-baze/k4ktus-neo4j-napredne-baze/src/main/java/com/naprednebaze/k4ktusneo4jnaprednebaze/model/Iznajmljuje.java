@@ -20,12 +20,12 @@ public class Iznajmljuje {
     private final Firma firma;
 
     @Property
-    private LocalDate datum_od;
+    private String datum_od;
 
     @Property
-    private LocalDate datum_do;
+    private String datum_do;
 
-    public Iznajmljuje(Firma firma, LocalDate datum_od, LocalDate datum_do) {
+    public Iznajmljuje(Firma firma, String datum_od, String datum_do) {
         this.id = null;
         this.firma = firma;
         this.datum_od = datum_od;
