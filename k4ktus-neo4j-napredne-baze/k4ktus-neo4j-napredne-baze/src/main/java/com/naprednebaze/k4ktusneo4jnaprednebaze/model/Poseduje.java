@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Data
 @RelationshipProperties
-public class Pripada {
+public class Poseduje {
 
     @Id
     @GeneratedValue
@@ -19,17 +19,17 @@ public class Pripada {
     @Property
     private LocalDate datum_kupovine;
 
-    public Pripada(Vlasnik vlasnik, LocalDate datum_kupovine) {
+    public Poseduje(Vlasnik vlasnik, LocalDate datum_kupovine) {
         this.id = null;
         this.datum_kupovine = datum_kupovine;
         this.vlasnik = vlasnik;
     }
 
-    public Pripada withId(Long id) {
+    public Poseduje withId(Long id) {
         if (this.id.equals(id)) {
             return this;
         } else {
-            Pripada newObject = new Pripada(this.vlasnik, this.datum_kupovine);
+            Poseduje newObject = new Poseduje(this.vlasnik, this.datum_kupovine);
             newObject.id = id;
             return newObject;
         }

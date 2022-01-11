@@ -16,7 +16,7 @@ public class PoslovniProstor {
     private Double kvadratura;
     private String adresa;
 
-    @Relationship(type = "Deo" , direction = Relationship.Direction.OUTGOING)
+    @Relationship(type = "Sadrzi" , direction = Relationship.Direction.OUTGOING)
     private List<Kancelarija> kancelarije;
 
     public PoslovniProstor(Double kvadratura, String adresa, List<Kancelarija> kancelarije) {

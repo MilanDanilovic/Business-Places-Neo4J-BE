@@ -8,7 +8,7 @@ import org.springframework.data.neo4j.core.schema.TargetNode;
 
 @Data
 @RelationshipProperties
-public class Deo {
+public class Sadrzi {
     @Id
     @GeneratedValue
     private Long id;
@@ -16,16 +16,16 @@ public class Deo {
     @TargetNode
     private final PoslovniProstor poslovniProstor;
 
-    public Deo(PoslovniProstor poslovniProstor) {
+    public Sadrzi(PoslovniProstor poslovniProstor) {
         this.id = null;
         this.poslovniProstor = poslovniProstor;
     }
 
-    public Deo withId(Long id) {
+    public Sadrzi withId(Long id) {
         if (this.id.equals(id)) {
             return this;
         } else {
-            Deo newObject = new Deo(this.poslovniProstor);
+            Sadrzi newObject = new Sadrzi(this.poslovniProstor);
             newObject.id = id;
             return newObject;
         }

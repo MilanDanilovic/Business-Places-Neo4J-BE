@@ -1,13 +1,345 @@
-CREATE(Direktor:Vlasnik {ime: 'Ime', prezime: 'Prezime',datum_rodjenja:'2019.06.03' , jmbg: 123, broj_telefona: '064123456'})
+*VLASNIK*
+CREATE(Direktor:Vlasnik {ime: 'Marko', prezime: 'Markovic',datum_rodjenja:'03.06.1980' , jmbg: 123, broj_telefona: '064123456'})
 
-CREATE(Zgrada:PoslovniProstor {kvadratura: 1000.30, adresa: 'Neka Ulica 2'})
+*POSLOVNI PROSTOR*
+CREATE(Zgrada:PoslovniProstor {kvadratura: 1000.30, adresa: 'Prvomajska ulica 2'})
+CREATE(Stan:PoslovniProstor {kvadratura: 120.5, adresa: 'Prvomajska ulica 5'})
+
+*KANCELARIJA*
+CREATE(Kanc1:Kancelarija {broj_kancelarije: 1, kvadratura: 25, broj_radnika: 4})
+CREATE(Kanc2:Kancelarija {broj_kancelarije: 2, kvadratura: 30, broj_radnika: 4})
+CREATE(Kanc3:Kancelarija {broj_kancelarije: 3, kvadratura: 150, broj_radnika: 20})
+CREATE(Kanc4:Kancelarija {broj_kancelarije: 4, kvadratura: 40, broj_radnika: 6})
+CREATE(Kanc5:Kancelarija {broj_kancelarije: 5, kvadratura: 35, broj_radnika: 5})
+CREATE(Kanc6:Kancelarija {broj_kancelarije: 6, kvadratura: 20, broj_radnika: 3})
+CREATE(Kanc7:Kancelarija {broj_kancelarije: 7, kvadratura: 60, broj_radnika: 8})
+CREATE(Kanc8:Kancelarija {broj_kancelarije: 8, kvadratura: 100, broj_radnika: 15})
+CREATE(Kanc9:Kancelarija {broj_kancelarije: 9, kvadratura: 75, broj_radnika: 10})
+CREATE(Kanc10:Kancelarija {broj_kancelarije: 10, kvadratura: 33, broj_radnika: 4})
+CREATE(Kanc11:Kancelarija {broj_kancelarije: 11, kvadratura: 40, broj_radnika: 6})
+CREATE(Kanc12:Kancelarija {broj_kancelarije: 12, kvadratura: 40, broj_radnika: 6})
+CREATE(Kanc13:Kancelarija {broj_kancelarije: 13, kvadratura: 40, broj_radnika: 6})
+
+*FIRMA*
+CREATE(Firma1:Firma {naziv: 'Firma1', godisnja_zarada: 1000.50, pib: 123, datum_osnivanja: '01.10.2015'})
+CREATE(Firma2:Firma {naziv: 'Firma2', godisnja_zarada: 2000.50, pib: 456, datum_osnivanja: '25.12.2005'})
+CREATE(Firma3:Firma {naziv: 'Firma3', godisnja_zarada: 3000.50, pib: 789, datum_osnivanja: '03.05.2003'})
+CREATE(Firma4:Firma {naziv: 'Firma4', godisnja_zarada: 500.50, pib: 321, datum_osnivanja: '01.01.2020'})
+CREATE(Firma5:Firma {naziv: 'Firma5', godisnja_zarada: 6000.50, pib: 654, datum_osnivanja: '18.09.2009'})
+CREATE(Firma6:Firma {naziv: 'Firma6', godisnja_zarada: 2500.50, pib: 987, datum_osnivanja: '27.07.2016'})
+CREATE(Firma7:Firma {naziv: 'Firma7', godisnja_zarada: 1500.50, pib: 132, datum_osnivanja: '06.09.2017'})
+CREATE(Firma8:Firma {naziv: 'Firma8', godisnja_zarada: 3300.50, pib: 465, datum_osnivanja: '24.04.2013'})
+CREATE(Firma9:Firma {naziv: 'Firma9', godisnja_zarada: 7700.50, pib: 798, datum_osnivanja: '29.12.2008'})
+CREATE(Firma10:Firma {naziv: 'Firma10', godisnja_zarada: 10000.50, pib: 678, datum_osnivanja: '25.02.2002'})
+
+*ZAPOSLENI*
+CREATE(Zaposleni1:Zaposleni {ime: 'Jana', prezime: 'Rajkovic', datum_rodjenja: '7.11.1999', pol: 'zenski', jmbg: 123})
+CREATE(Zaposleni2:Zaposleni {ime: 'Milan', prezime: 'Danilovic', datum_rodjenja: '8.10.1999', pol: 'muski', jmbg: 456})
+CREATE(Zaposleni3:Zaposleni {ime: 'Aleksa', prezime: 'Krstic', datum_rodjenja: '6.9.1999', pol: 'muski', jmbg: 789})
+CREATE(Zaposleni4:Zaposleni {ime: 'Andjela', prezime: 'Kostic', datum_rodjenja: '14.9.1999', pol: 'zenski', jmbg: 987})
+CREATE(Zaposleni5:Zaposleni {ime: 'Ime5', prezime: 'Prezime5', datum_rodjenja: '01.02.2000', pol: 'muski', jmbg: 111})
+CREATE(Zaposleni6:Zaposleni {ime: 'Ime6', prezime: 'Prezime6', datum_rodjenja: '02.01.1988', pol: 'muski', jmbg: 222})
+CREATE(Zaposleni7:Zaposleni {ime: 'Ime7', prezime: 'Prezime7', datum_rodjenja: '17.05.1987', pol: 'zenski', jmbg: 333})
+CREATE(Zaposleni8:Zaposleni {ime: 'Ime8', prezime: 'Prezime8', datum_rodjenja: '15.03.1986', pol: 'zenski', jmbg: 444})
+CREATE(Zaposleni9:Zaposleni {ime: 'Ime9', prezime: 'Prezime9', datum_rodjenja: '20.07.1980', pol: 'zenski', jmbg: 555})
+CREATE(Zaposleni10:Zaposleni {ime: 'Ime10', prezime: 'Prezime10', datum_rodjenja: '23.04.1989', pol: 'zenski', jmbg: 666})
+CREATE(Zaposleni11:Zaposleni {ime: 'Ime11', prezime: 'Prezime11', datum_rodjenja: '13.06.1990', pol: 'muski', jmbg: 777})
+CREATE(Zaposleni12:Zaposleni {ime: 'Ime12', prezime: 'Prezime12', datum_rodjenja: '28.08.1996', pol: 'muski', jmbg: 888})
+
+*POSEDUJE*
+MATCH
+  (a:Vlasnik),
+  (b:PoslovniProstor)
+WHERE a.ime = 'Marko' AND b.adresa = 'Prvomajska ulica 2'
+CREATE (a)-[r:Poseduje {datum_kupovine: '01.01.2008'}]->(b)
+RETURN type(r)
 
 MATCH
   (a:Vlasnik),
   (b:PoslovniProstor)
-WHERE a.ime = 'Ime' AND b.adresa = 'Neka Ulica 2'
-CREATE (a)-[r:Pripada]->(b)
+WHERE a.ime = 'Marko' AND b.adresa = 'Prvomajska ulica 5'
+CREATE (a)-[r:Poseduje {datum_kupovine: '02.03.2005'}]->(b)
 RETURN type(r)
 
+*SADRZI*
+MATCH
+  (a:Kancelarija),
+  (b:PoslovniProstor)
+WHERE a.broj_kancelarije = 1 AND b.adresa = 'Prvomajska ulica 5'
+CREATE (b)-[r:Sadrzi]->(a)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:PoslovniProstor)
+WHERE a.broj_kancelarije = 3 AND b.adresa = 'Prvomajska ulica 5'
+CREATE (b)-[r:Sadrzi]->(a)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:PoslovniProstor)
+WHERE a.broj_kancelarije = 5 AND b.adresa = 'Prvomajska ulica 5'
+CREATE (b)-[r:Sadrzi]->(a)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:PoslovniProstor)
+WHERE a.broj_kancelarije = 7 AND b.adresa = 'Prvomajska ulica 5'
+CREATE (b)-[r:Sadrzi]->(a)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:PoslovniProstor)
+WHERE a.broj_kancelarije = 9 AND b.adresa = 'Prvomajska ulica 5'
+CREATE (b)-[r:Sadrzi]->(a)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:PoslovniProstor)
+WHERE a.broj_kancelarije = 11 AND b.adresa = 'Prvomajska ulica 5'
+CREATE (b)-[r:Sadrzi]->(a)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:PoslovniProstor)
+WHERE a.broj_kancelarije = 13 AND b.adresa = 'Prvomajska ulica 5'
+CREATE (b)-[r:Sadrzi]->(a)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:PoslovniProstor)
+WHERE a.broj_kancelarije = 2 AND b.adresa = 'Prvomajska ulica 2'
+CREATE (b)-[r:Sadrzi]->(a)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:PoslovniProstor)
+WHERE a.broj_kancelarije = 4 AND b.adresa = 'Prvomajska ulica 2'
+CREATE (b)-[r:Sadrzi]->(a)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:PoslovniProstor)
+WHERE a.broj_kancelarije = 6 AND b.adresa = 'Prvomajska ulica 2'
+CREATE (b)-[r:Sadrzi]->(a)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:PoslovniProstor)
+WHERE a.broj_kancelarije = 8 AND b.adresa = 'Prvomajska ulica 2'
+CREATE (b)-[r:Sadrzi]->(a)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:PoslovniProstor)
+WHERE a.broj_kancelarije = 10 AND b.adresa = 'Prvomajska ulica 2'
+CREATE (b)-[r:Sadrzi]->(a)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:PoslovniProstor)
+WHERE a.broj_kancelarije = 12 AND b.adresa = 'Prvomajska ulica 2'
+CREATE (b)-[r:Sadrzi]->(a)
+RETURN type(r)
+
+*IZNAJMLJUJE*
+MATCH
+  (a:Kancelarija),
+  (b:Firma)
+WHERE a.broj_kancelarije = 1 AND b.pib = 123
+CREATE (a)-[r:Iznajmljuje {datum_od: '10.11.2011', datum_do: '10.11.2026'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:Firma)
+WHERE a.broj_kancelarije = 4 AND b.pib = 654
+CREATE (a)-[r:Iznajmljuje {datum_od: '10.05.2019', datum_do: '10.05.2036'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:Firma)
+WHERE a.broj_kancelarije = 2 AND b.pib = 654
+CREATE (a)-[r:Iznajmljuje {datum_od: '10.05.2019', datum_do: '10.05.2036'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:Firma)
+WHERE a.broj_kancelarije = 6 AND b.pib = 321
+CREATE (a)-[r:Iznajmljuje {datum_od: '12.05.2020', datum_do: '12.05.2035'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:Firma)
+WHERE a.broj_kancelarije = 8 AND b.pib = 678
+CREATE (a)-[r:Iznajmljuje {datum_od: '19.03.2015', datum_do: '19.03.2030'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:Firma)
+WHERE a.broj_kancelarije = 10 AND b.pib = 678
+CREATE (a)-[r:Iznajmljuje {datum_od: '19.03.2015', datum_do: '19.03.2030'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:Firma)
+WHERE a.broj_kancelarije = 7 AND b.pib = 798
+CREATE (a)-[r:Iznajmljuje {datum_od: '20.06.2015', datum_do: '20.06.2030'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:Firma)
+WHERE a.broj_kancelarije = 9 AND b.pib = 798
+CREATE (a)-[r:Iznajmljuje {datum_od: '20.06.2015', datum_do: '20.06.2030'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:Firma)
+WHERE a.broj_kancelarije = 5 AND b.pib = 132
+CREATE (a)-[r:Iznajmljuje {datum_od: '23.02.2015', datum_do: '23.02.2030'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:Firma)
+WHERE a.broj_kancelarije = 3 AND b.pib = 456
+CREATE (a)-[r:Iznajmljuje {datum_od: '17.07.2015', datum_do: '17.07.2030'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:Firma)
+WHERE a.broj_kancelarije = 11 AND b.pib = 789
+CREATE (a)-[r:Iznajmljuje {datum_od: '07.08.2015', datum_do: '07.08.2030'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:Firma)
+WHERE a.broj_kancelarije = 12 AND b.pib = 987
+CREATE (a)-[r:Iznajmljuje {datum_od: '18.04.2015', datum_do: '18.04.2030'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Kancelarija),
+  (b:Firma)
+WHERE a.broj_kancelarije = 13 AND b.pib = 465
+CREATE (a)-[r:Iznajmljuje {datum_od: '10.09.2015', datum_do: '10.09.2030'}]->(b)
+RETURN type(r)
+
+*RADE*
+MATCH
+  (a:Firma),
+  (b:Zaposleni)
+WHERE a.pib = 987 AND b.jmbg = 123
+CREATE (a)-[r:Rade {datum_od: '01.04.2021', datum_do: '01.04.2030', pozicija: 'pozicija2'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Firma),
+  (b:Zaposleni)
+WHERE a.pib = 987 AND b.jmbg = 456
+CREATE (a)-[r:Rade {datum_od: '01.04.2021', datum_do: '01.04.2030', pozicija: 'pozicija2'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Firma),
+  (b:Zaposleni)
+WHERE a.pib = 654 AND b.jmbg = 789
+CREATE (a)-[r:Rade {datum_od: '01.04.2021', datum_do: '01.04.2030', pozicija: 'pozicija2'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Firma),
+  (b:Zaposleni)
+WHERE a.pib = 654 AND b.jmbg = 987
+CREATE (a)-[r:Rade {datum_od: '01.04.2021', datum_do: '01.04.2030', pozicija: 'pozicija2'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Firma),
+  (b:Zaposleni)
+WHERE a.pib = 321 AND b.jmbg = 111
+CREATE (a)-[r:Rade {datum_od: '03.05.2020', datum_do: '03.05.2030', pozicija: 'pozicija2'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Firma),
+  (b:Zaposleni)
+WHERE a.pib = 678 AND b.jmbg = 222
+CREATE (a)-[r:Rade {datum_od: '10.05.2020', datum_do: '10.05.2030', pozicija: 'pozicija1'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Firma),
+  (b:Zaposleni)
+WHERE a.pib = 678 AND b.jmbg = 333
+CREATE (a)-[r:Rade {datum_od: '08.04.2015', datum_do: '08.04.2025', pozicija: 'pozicija3'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Firma),
+  (b:Zaposleni)
+WHERE a.pib = 678 AND b.jmbg = 444
+CREATE (a)-[r:Rade {datum_od: '17.08.2014', datum_do: '17.08.2024', pozicija: 'pozicija4'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Firma),
+  (b:Zaposleni)
+WHERE a.pib = 678 AND b.jmbg = 555
+CREATE (a)-[r:Rade {datum_od: '01.12.2021', datum_do: '01.12.2031', pozicija: 'pozicija5'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Firma),
+  (b:Zaposleni)
+WHERE a.pib = 123 AND b.jmbg = 666
+CREATE (a)-[r:Rade {datum_od: '15.05.2017', datum_do: '15.05.2027', pozicija: 'pozicija6'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Firma),
+  (b:Zaposleni)
+WHERE a.pib = 456 AND b.jmbg = 777
+CREATE (a)-[r:Rade {datum_od: '25.12.2021', datum_do: '25.12.2031', pozicija: 'pozicija2'}]->(b)
+RETURN type(r)
+
+MATCH
+  (a:Firma),
+  (b:Zaposleni)
+WHERE a.pib = 789 AND b.jmbg = 888
+CREATE (a)-[r:Rade {datum_od: '17.06.2018', datum_do: '17.06.2028', pozicija: 'pozicija5'}]->(b)
+RETURN type(r)
+
+
+
+
+
+
+*PREGLED*
+MATCH (n) RETURN n LIMIT 25
+*BRISANJE SVEGA*
 MATCH (n)
 DETACH DELETE n
+*BRISANJE JEDNOG CVORA*
+MATCH (n:Firma {pib: 678})
+DELETE n

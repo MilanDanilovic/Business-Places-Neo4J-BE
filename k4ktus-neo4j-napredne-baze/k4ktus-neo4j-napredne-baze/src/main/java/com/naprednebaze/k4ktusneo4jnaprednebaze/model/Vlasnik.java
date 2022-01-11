@@ -17,7 +17,7 @@ public class Vlasnik {
     private Long jmbg;
     private String broj_telefona;
 
-    @Relationship(type = "Pripada" , direction = Relationship.Direction.OUTGOING)
+    @Relationship(type = "Poseduje" , direction = Relationship.Direction.OUTGOING)
     private List<PoslovniProstor> poslovniProstori;
 
     public Vlasnik(String ime, String prezime,LocalDate datum_rodjenja, Long jmbg, String broj_telefona, List<PoslovniProstor> poslovniProstori) {
