@@ -14,4 +14,18 @@ public interface PoslovniProstorRepository extends Neo4jRepository<PoslovniProst
 
     @Query("CREATE(Zgrada:PoslovniProstor {kvadratura: $kvadratura, adresa: $adresa})")
     void addPoslovniProstor(@Param("kvadratura") Double kvadratura, @Param("adresa") String adresa);
+
+    @Query("MATCH (n:PoslovniProstor)\n" +
+            "WHERE id(n) = $id\n" +
+            "DETACH DELETE n")
+    void deletePoslovniProstor(@Param("id") Long id);
+
+    @Query("MATCH (n:PoslovniProstor)\n" +
+            "WHERE id(n) = $id\n" +
+            "SET n={adresa: $novaAdresa, kvadratura: $novaKvadratura} \n")
+    void updatePoslovniProstor(@Param("id") Long id, @Param("novaKvadratura") Double novaKvadratura, @Param("novaAdresa") String novaAdresa);
+
+    @Query("MATCH (n:PoslovniProstor)\n" +
+            "DETACH DELETE n")
+    void deleteAllPoslovniProstor();
 }

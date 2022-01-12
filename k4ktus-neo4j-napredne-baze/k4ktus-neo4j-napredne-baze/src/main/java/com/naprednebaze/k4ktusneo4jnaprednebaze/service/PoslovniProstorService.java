@@ -1,9 +1,8 @@
 package com.naprednebaze.k4ktusneo4jnaprednebaze.service;
 
 import com.naprednebaze.k4ktusneo4jnaprednebaze.dto.PoslovniProstorDTO;
-import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Kancelarija;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.model.PoslovniProstor;
-import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.KancelarijaRepository;
+import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.PosedujeRepository;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.PoslovniProstorRepository;
 import org.springframework.stereotype.Service;
 
@@ -13,31 +12,31 @@ import java.util.Collection;
 public class PoslovniProstorService {
 
     private PoslovniProstorRepository poslovniProstorRepository;
-    private KancelarijaRepository kancelarijaRepository;
+    private PosedujeRepository posedujeRepository;
 
-    public PoslovniProstorService(PoslovniProstorRepository poslovniProstorRepository, KancelarijaRepository kancelarijaRepository) {
+    public PoslovniProstorService(PoslovniProstorRepository poslovniProstorRepository, PosedujeRepository posedujeRepository) {
         this.poslovniProstorRepository = poslovniProstorRepository;
-        this.kancelarijaRepository = kancelarijaRepository;
+        this.posedujeRepository = posedujeRepository;
     }
 
     public Collection<PoslovniProstor> getAll() {
         return poslovniProstorRepository.getAllPoslovniProstor();
     }
 
-    public void addPoslovniProstor(PoslovniProstorDTO noviPoslovniProstorDTO) {
-
-        /*PoslovniProstor poslovniProstorZaCuvanje = new PoslovniProstor();
-        poslovniProstorZaCuvanje.setKvadratura(noviPoslovniProstor.getKvadratura());
-        poslovniProstorZaCuvanje.setAdresa(noviPoslovniProstor.getAdresa());*/
-
+    public void addPoslovniProstor(PoslovniProstorDTO noviPoslovniProstorDTO, Long jmbg, String datum_kupovine) {
         poslovniProstorRepository.addPoslovniProstor(noviPoslovniProstorDTO.getKvadratura(), noviPoslovniProstorDTO.getAdresa());
+        posedujeRepository.addPoseduje(datum_kupovine, jmbg, noviPoslovniProstorDTO.getAdresa());
+    }
 
+    public void deletePoslovniProstor(PoslovniProstorDTO noviPoslovniProstorDTO) {
+        poslovniProstorRepository.deletePoslovniProstor(noviPoslovniProstorDTO.getId());
+    }
 
-        /*Kancelarija kancelarijaZaCuvanje = new Kancelarija();
-        kancelarijaZaCuvanje.setBroj_kancelarije(novaKancelarija.getBroj_kancelarije());
-        kancelarijaZaCuvanje.setKvadratura(novaKancelarija.getKvadratura());
-        kancelarijaZaCuvanje.setBroj_radnika(novaKancelarija.getBroj_radnika());
-        kancelarijaZaCuvanje.setStatus(novaKancelarija.getStatus());
-        kancelarijaZaCuvanje.setFirma(novaKancelarija.getFirma());*/
+    public void updatePoslovniProstor(PoslovniProstorDTO noviPoslovniProstorDTO) {
+        poslovniProstorRepository.updatePoslovniProstor(noviPoslovniProstorDTO.getId(), noviPoslovniProstorDTO.getKvadratura(), noviPoslovniProstorDTO.getAdresa());
+    }
+
+    public void deleteAllPoslovniProstor() {
+        poslovniProstorRepository.deleteAllPoslovniProstor();
     }
 }

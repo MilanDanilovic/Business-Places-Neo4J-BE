@@ -1,11 +1,10 @@
 package com.naprednebaze.k4ktusneo4jnaprednebaze.controller;
 
+import com.naprednebaze.k4ktusneo4jnaprednebaze.dto.KancelarijaDTO;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Kancelarija;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.service.KancelarijaService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @RestController
@@ -40,5 +39,57 @@ public class KancelarijaController {
     )
     public Collection<Kancelarija> getOccupied() {
         return kancelarijaService.getOccupied();
+    }
+
+    @PostMapping(
+            value = "/addKancelarija/{adresa}",
+            produces = {"application/json"}
+    )
+    public HttpStatus addKancelarija(@PathVariable("adresa") String adresa, @RequestBody(required = true) KancelarijaDTO kancelarijaDTO) {
+        try {
+            kancelarijaService.addKancelarija(adresa, kancelarijaDTO);
+        } catch (RuntimeException e) {
+            return HttpStatus.BAD_REQUEST;
+        }
+        return HttpStatus.ACCEPTED;
+    }
+
+    @DeleteMapping(
+            value = "/deleteKancelarija",
+            produces = {"application/json"}
+    )
+    public HttpStatus deleteKancelarija(@RequestBody(required = true) KancelarijaDTO kancelarijaDTO) {
+        try {
+            kancelarijaService.deleteKancelarija(kancelarijaDTO);
+        } catch (RuntimeException e) {
+            return HttpStatus.BAD_REQUEST;
+        }
+        return HttpStatus.ACCEPTED;
+    }
+
+    @PutMapping(
+            value = "/updateKancelarija",
+            produces = {"application/json"}
+    )
+    public HttpStatus updateKancelarija(@RequestBody(required = true) KancelarijaDTO kancelarijaDTO) {
+        try {
+            kancelarijaService.updateKancelarija(kancelarijaDTO);
+        } catch (RuntimeException e) {
+            return HttpStatus.BAD_REQUEST;
+        }
+        return HttpStatus.ACCEPTED;
+    }
+
+    @DeleteMapping(
+            value = "/deleteAllKancelarija",
+            produces = {"application/json"}
+    )
+    public HttpStatus deleteAllKancelarija() {
+        try {
+            kancelarijaService.deleteAllKancelarija();
+        } catch (RuntimeException e) {
+            return HttpStatus.BAD_REQUEST;
+        }
+        return HttpStatus.ACCEPTED;
     }
 }

@@ -3,8 +3,6 @@ package com.naprednebaze.k4ktusneo4jnaprednebaze.model;
 import lombok.Data;
 import org.springframework.data.neo4j.core.schema.*;
 
-import java.time.LocalDate;
-
 @Data
 @RelationshipProperties
 public class Poseduje {
