@@ -26,6 +26,10 @@ public class PoslovniProstor {
         this.kancelarije = kancelarije;
     }
 
+    public PoslovniProstor() {
+
+    }
+
     public PoslovniProstor withId(Long id) {
         if (this.id.equals(id)) {
             return this;

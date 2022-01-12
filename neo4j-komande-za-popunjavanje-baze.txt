@@ -330,13 +330,70 @@ WHERE a.pib = 789 AND b.jmbg = 888
 CREATE (a)-[r:Rade {datum_od: '17.06.2018', datum_do: '17.06.2028', pozicija: 'pozicija5'}]->(b)
 RETURN type(r)
 
+*UPDATE ZA KANCELARIJU-DODAVANJE STATUSA*
+MATCH (n:Kancelarija {broj_kancelarije: 1})
+SET n.status = 'true'
+RETURN n
 
+MATCH (n:Kancelarija {broj_kancelarije: 2})
+SET n.status = 'true'
+RETURN n
 
+MATCH (n:Kancelarija {broj_kancelarije: 3})
+SET n.status = 'true'
+RETURN n
 
+MATCH (n:Kancelarija {broj_kancelarije: 4})
+SET n.status = 'true'
+RETURN n
 
+MATCH (n:Kancelarija {broj_kancelarije: 5})
+SET n.status = 'true'
+RETURN n
+
+MATCH (n:Kancelarija {broj_kancelarije: 6})
+SET n.status = 'true'
+RETURN n
+
+MATCH (n:Kancelarija {broj_kancelarije: 7})
+SET n.status = 'true'
+RETURN n
+
+MATCH (n:Kancelarija {broj_kancelarije: 8})
+SET n.status = 'true'
+RETURN n
+
+MATCH (n:Kancelarija {broj_kancelarije: 9})
+SET n.status = 'true'
+RETURN n
+
+MATCH (n:Kancelarija {broj_kancelarije: 10})
+SET n.status = 'true'
+RETURN n
+
+MATCH (n:Kancelarija {broj_kancelarije: 11})
+SET n.status = 'true'
+RETURN n
+
+MATCH (n:Kancelarija {broj_kancelarije: 12})
+SET n.status = 'true'
+RETURN n
+
+MATCH (n:Kancelarija {broj_kancelarije: 13})
+SET n.status = 'true'
+RETURN n
+
+*UPDATE ZA ZAPOSLENI-DODAVANJE KARTICE*
+MATCH (n:Zaposleni)
+SET n.kartica = 1
+RETURN n
+
+*PREUZIMANJE UGNJEZDENIH*
+MATCH (Firma {naziv: 'Firma6'})--(Zaposleni)
+RETURN Zaposleni.ime
 
 *PREGLED*
-MATCH (n) RETURN n LIMIT 25
+MATCH (n) RETURN n LIMIT 200
 *BRISANJE SVEGA*
 MATCH (n)
 DETACH DELETE n
