@@ -1,6 +1,7 @@
 package com.naprednebaze.k4ktusneo4jnaprednebaze.repository;
 
 import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Firma;
+import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Zaposleni;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
 import org.springframework.data.repository.query.Param;
@@ -9,7 +10,8 @@ import java.util.Collection;
 
 public interface FirmaRepository extends Neo4jRepository<Firma, Long> {
 
-    @Query("MATCH (n:Firma) RETURN n")
+    //@Query("MATCH p = (f:Firma)-[r:Rade]->(z:Zaposleni) RETURN p")
+    @Query("MATCH (n:Firma) return n")
     Collection<Firma> getAllFirma();
 
     @Query("CREATE(Firma:Firma {naziv: $naziv, godisnja_zarada: $godisnja_zarada, pib: $pib, datum_osnivanja:$datum_osnivanja})")

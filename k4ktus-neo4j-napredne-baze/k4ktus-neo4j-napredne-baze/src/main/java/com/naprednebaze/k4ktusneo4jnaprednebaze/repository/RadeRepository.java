@@ -9,7 +9,7 @@ public interface RadeRepository extends Neo4jRepository<Rade, Long> {
 
     @Query("MATCH\n" +
             "(a:Firma),\n" +
-            "(b:Rade)\n" +
+            "(b:Zaposleni)\n" +
             "WHERE a.pib = $pib AND b.jmbg = $jmbg\n" +
             "CREATE (a)-[r:Rade {datum_od: $datum_od, datum_do: $datum_do, pozicija: $pozicija}]->(b)\n" +
             "RETURN type(r)")

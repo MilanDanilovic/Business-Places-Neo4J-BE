@@ -20,23 +20,27 @@ public class Firma {
     private Long pib;
     private String datum_osnivanja;
 
-    @Relationship(type = "Rade" , direction = Relationship.Direction.OUTGOING)
+    @Relationship(type = "Rade" , direction = Relationship.Direction.INCOMING)
     private List<Zaposleni> zaposleni;
 
-    public Firma(String naziv, Double godisnja_zarada, Long pib, List<Zaposleni> zaposleni, String datum_osnivanja) {
+    @Relationship(type = "RadiNa" , direction = Relationship.Direction.OUTGOING)
+    private List<Projekat> projekti;
+
+    public Firma(String naziv, Double godisnja_zarada, Long pib, List<Zaposleni> zaposleni, String datum_osnivanja, List<Projekat> projekti) {
         this.id = null;
         this.naziv = naziv;
         this.godisnja_zarada = godisnja_zarada;
         this.pib = pib;
         this.zaposleni = zaposleni;
         this.datum_osnivanja = datum_osnivanja;
+        this.projekti = projekti;
     }
 
     public Firma withId(Long id) {
         if (this.id.equals(id)) {
             return this;
         } else {
-            Firma newObject = new Firma(this.naziv, this.godisnja_zarada, this.pib, this.zaposleni, this.datum_osnivanja);
+            Firma newObject = new Firma(this.naziv, this.godisnja_zarada, this.pib, this.zaposleni, this.datum_osnivanja, this.projekti);
             newObject.id = id;
             return newObject;
         }

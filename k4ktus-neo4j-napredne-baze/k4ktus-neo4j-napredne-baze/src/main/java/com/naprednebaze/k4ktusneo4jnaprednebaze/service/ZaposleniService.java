@@ -2,10 +2,8 @@ package com.naprednebaze.k4ktusneo4jnaprednebaze.service;
 
 import com.naprednebaze.k4ktusneo4jnaprednebaze.dto.ZaposleniDTO;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Zaposleni;
-import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.KancelarijaRepository;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.RadeRepository;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.ZaposleniRepository;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;

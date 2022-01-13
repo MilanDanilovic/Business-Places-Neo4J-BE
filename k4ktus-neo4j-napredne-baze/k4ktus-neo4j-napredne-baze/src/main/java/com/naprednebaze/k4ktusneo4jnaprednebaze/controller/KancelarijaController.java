@@ -92,4 +92,17 @@ public class KancelarijaController {
         }
         return HttpStatus.ACCEPTED;
     }
+
+    @PutMapping(
+            value = "/updateStatusKancelarija/{id}/{status}",
+            produces = {"application/json"}
+    )
+    public HttpStatus updateStatusKancelarija(@PathVariable("id") Long id, @PathVariable("status") String status) {
+        try {
+            kancelarijaService.updateStatusKancelarija(id, status);
+        } catch (RuntimeException e) {
+            return HttpStatus.BAD_REQUEST;
+        }
+        return HttpStatus.ACCEPTED;
+    }
 }

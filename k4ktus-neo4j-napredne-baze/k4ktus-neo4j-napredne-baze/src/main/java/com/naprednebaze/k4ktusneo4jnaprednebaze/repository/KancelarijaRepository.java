@@ -12,11 +12,6 @@ public interface KancelarijaRepository extends Neo4jRepository<Kancelarija, Long
     @Query("MATCH (n:Kancelarija) RETURN n")
     Collection<Kancelarija> getAllKancelarija();
 
-    @Query("MATCH (n:Kancelarija)\n" +
-            "WHERE broj_kancelarije(n) = $broj_kancelarije\n" +
-            "RETURN n.id")
-    Long getKancelatijaPoBrojuKancelarije(@Param("broj_kancelarije") Long broj_kancelarije);
-
     @Query("MATCH (n:Kancelarija {status: 'false'}) RETURN n.broj_kancelarije ")
     Collection<Kancelarija> getEmptyKancelarija();
 
