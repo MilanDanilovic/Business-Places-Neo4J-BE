@@ -18,8 +18,7 @@ public class FirmaController {
     }
 
     @GetMapping(
-        value = "/getAll",
-        produces = {"application/json"}
+        value = "/getAll"
     )
     public Collection<Firma> getAll() {
         return firmaService.getAll();

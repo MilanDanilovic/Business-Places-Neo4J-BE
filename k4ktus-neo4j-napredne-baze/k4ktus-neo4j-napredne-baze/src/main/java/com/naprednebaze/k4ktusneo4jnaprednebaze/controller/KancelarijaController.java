@@ -18,24 +18,21 @@ public class KancelarijaController {
     }
 
     @GetMapping(
-            value = "/getAll",
-            produces = {"application/json"}
+            value = "/getAll"
     )
     public Collection<Kancelarija> getAll() {
         return kancelarijaService.getAll();
     }
 
     @GetMapping(
-            value = "/getEmpty",
-            produces = {"application/json"}
+            value = "/getEmpty"
     )
     public Collection<Kancelarija> getEmpty() {
         return kancelarijaService.getEmpty();
     }
 
     @GetMapping(
-            value = "/getOccupied",
-            produces = {"application/json"}
+            value = "/getOccupied"
     )
     public Collection<Kancelarija> getOccupied() {
         return kancelarijaService.getOccupied();

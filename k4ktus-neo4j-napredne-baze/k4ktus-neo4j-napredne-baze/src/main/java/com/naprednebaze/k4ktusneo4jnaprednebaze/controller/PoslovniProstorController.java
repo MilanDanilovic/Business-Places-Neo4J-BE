@@ -19,8 +19,7 @@ public class PoslovniProstorController {
     }
 
     @GetMapping(
-            value = "/getAll",
-            produces = {"application/json"}
+            value = "/getAll"
     )
     public Collection<PoslovniProstor> getAll() {
         return poslovniProstorService.getAll();
