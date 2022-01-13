@@ -14,4 +14,10 @@ public interface IznajmljujeRepository extends Neo4jRepository<Iznajmljuje, Long
             "CREATE (a)-[r:Iznajmljuje {datum_od: $datum_od, datum_do: $datum_do}]->(b)\n" +
             "RETURN type(r)")
     void addIznajmljuje(@Param("datum_od") String datum_od, @Param("datum_do") String datum_do, @Param("broj_kancelarije") Long broj_kancelarije, @Param("pib") Long pib);
+
+    @Query("MATCH (k:Kancelarija)-[i:Iznajmljuje]->(f:Firma)\n" +
+            "WHERE id(k) = $idKancelarije AND id(f) = $idFirme\n" +
+            "SET i={datum_od: $datum_od, datum_do: $datum_do}\n" +
+            "RETURN i")
+    void updateIznajmljuje(@Param("datum_od") String datum_od, @Param("datum_do") String datum_do, @Param("idKancelarije") Long idKancelarije, @Param("idFirme") Long idFirme);
 }

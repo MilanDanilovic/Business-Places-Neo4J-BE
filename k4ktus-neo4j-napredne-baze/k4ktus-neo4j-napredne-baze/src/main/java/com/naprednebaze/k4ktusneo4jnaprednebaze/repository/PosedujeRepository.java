@@ -14,4 +14,10 @@ public interface PosedujeRepository extends Neo4jRepository<Poseduje, Long> {
             "CREATE (a)-[r:Poseduje {datum_kupovine: $datum_kupovine}]->(b)\n" +
             "RETURN type(r)")
     void addPoseduje(@Param("datum_kupovine") String datum_kupovine, @Param("jmbg") Long jmbg, @Param("adresa") String adresa);
+
+    @Query("MATCH (v:Vlasnik)-[p:Poseduje]->(o:PoslovniProstor)\n" +
+            "WHERE id(v) = $idVlasnika AND id(o) = $idPoslovnogProstora\n" +
+            "SET p={datum_kupovine: $datum_kupovine}\n" +
+            "RETURN p")
+    void updatePoseduje(@Param("datum_kupovine") String datum_kupovine, @Param("idVlasnika") Long idVlasnika, @Param("idPoslovnogProstora") Long idPoslovnogProstora);
 }
