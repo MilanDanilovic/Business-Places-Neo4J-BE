@@ -47,4 +47,8 @@ public class KancelarijaService {
     public void deleteAllKancelarija() {
         kancelarijaRepository.deleteAllKancelarija();
     }
+
+    public void updateStatusKancelarija(Long id, String status) {
+        kancelarijaRepository.updateStatusKancelarija(id, status);
+    }
 }
