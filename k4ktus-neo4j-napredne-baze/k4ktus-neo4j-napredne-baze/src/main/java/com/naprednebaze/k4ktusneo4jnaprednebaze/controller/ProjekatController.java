@@ -19,8 +19,7 @@ public class ProjekatController {
     }
 
     @GetMapping(
-            value = "/getAll",
-            produces = {"application/json"}
+            value = "/getAll"
     )
     public Collection<Projekat> getAll() {
         return projekatService.getAll();
