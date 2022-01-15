@@ -11,18 +11,20 @@ public class Projekat {
     private Long id;
     private String naziv;
     private Long sifra_projekta;
+    private Long idFirme;
 
-    public Projekat(String naziv, Long sifra_projekta) {
+    public Projekat(String naziv, Long sifra_projekta, Long idFirme) {
         this.id = null;
         this.naziv = naziv;
         this.sifra_projekta = sifra_projekta;
+        this.idFirme = idFirme;
     }
 
     public Projekat withId(Long id) {
         if (this.id.equals(id)) {
             return this;
         } else {
-            Projekat newObject = new Projekat(this.naziv, this.sifra_projekta);
+            Projekat newObject = new Projekat(this.naziv, this.sifra_projekta, this.idFirme);
             newObject.id = id;
             return newObject;
         }

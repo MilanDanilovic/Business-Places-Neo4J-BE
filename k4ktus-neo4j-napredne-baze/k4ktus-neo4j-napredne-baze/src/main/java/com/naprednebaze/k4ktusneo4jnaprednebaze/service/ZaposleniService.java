@@ -1,6 +1,6 @@
 package com.naprednebaze.k4ktusneo4jnaprednebaze.service;
 
-import com.naprednebaze.k4ktusneo4jnaprednebaze.dto.ZaposleniDTO;
+import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Projekat;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Zaposleni;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.RadeRepository;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.ZaposleniRepository;
@@ -24,7 +24,7 @@ public class ZaposleniService {
     }
 
     public void addZaposleni(String datum_od, String datum_do, String pozicija, Long pib, Zaposleni zaposleni) {
-        zaposleniRepository.addZaposleni(zaposleni.getIme(), zaposleni.getPrezime(), zaposleni.getDatum_rodjenja(), zaposleni.getPol(), zaposleni.getJmbg(), zaposleni.getKartica());
+        zaposleniRepository.addZaposleni(zaposleni.getIme(), zaposleni.getPrezime(), zaposleni.getDatum_rodjenja(), zaposleni.getPol(), zaposleni.getJmbg(), zaposleni.getKartica(), zaposleni.getIdFirme());
         radeRepository.addRade(datum_od, datum_do, pozicija, pib, zaposleni.getJmbg());
     }
 
@@ -38,5 +38,9 @@ public class ZaposleniService {
 
     public void deleteAllZaposleni() {
         zaposleniRepository.deleteAllZaposleni();
+    }
+
+    public Collection<Zaposleni> getZaposleniWithFirmaId(Long idFirme) {
+        return zaposleniRepository.getZaposleniWithFirmaId(idFirme);
     }
 }

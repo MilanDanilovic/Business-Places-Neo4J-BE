@@ -1,6 +1,5 @@
 package com.naprednebaze.k4ktusneo4jnaprednebaze.service;
 
-import com.naprednebaze.k4ktusneo4jnaprednebaze.dto.ProjekatDTO;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Projekat;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.ProjekatRepository;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.RadiNaRepository;
@@ -23,13 +22,13 @@ public class ProjekatService {
         return projekatRepository.getAllProjekat();
     }
 
-    public void addProjekat(Long pib, String datum_od, String datum_do, ProjekatDTO projekatDTO) {
-        projekatRepository.addProjekat(projekatDTO.getNaziv(), projekatDTO.getSifra_projekta());
-        radiNaRepository.addRadiNa(pib, projekatDTO.getSifra_projekta(), datum_od, datum_do);
+    public void addProjekat(Long pib, String datum_od, String datum_do, Projekat projekat) {
+        projekatRepository.addProjekat(projekat.getNaziv(), projekat.getSifra_projekta(), projekat.getIdFirme());
+        radiNaRepository.addRadiNa(pib, projekat.getSifra_projekta(), datum_od, datum_do);
     }
 
-    public void deleteProjekat(ProjekatDTO projekatDTO) {
-        projekatRepository.deleteProjekat(projekatDTO.getId());
+    public void deleteProjekat(Projekat projekat) {
+        projekatRepository.deleteProjekat(projekat.getId());
     }
 
     public void updateProjekat(Projekat projekat) {
@@ -38,5 +37,9 @@ public class ProjekatService {
 
     public void deleteAllProjekat() {
         projekatRepository.deleteAllProjekat();
+    }
+
+    public Collection<Projekat> getProjekatWithFirmaId(Long idFirme) {
+        return projekatRepository.getProjekatWithFirmaId(idFirme);
     }
 }

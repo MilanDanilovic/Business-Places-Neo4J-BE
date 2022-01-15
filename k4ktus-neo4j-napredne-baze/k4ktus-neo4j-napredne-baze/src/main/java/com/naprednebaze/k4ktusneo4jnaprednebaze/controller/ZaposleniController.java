@@ -1,7 +1,5 @@
 package com.naprednebaze.k4ktusneo4jnaprednebaze.controller;
 
-import com.naprednebaze.k4ktusneo4jnaprednebaze.dto.KancelarijaDTO;
-import com.naprednebaze.k4ktusneo4jnaprednebaze.dto.ZaposleniDTO;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Zaposleni;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.service.ZaposleniService;
 import org.springframework.http.HttpStatus;
@@ -23,6 +21,13 @@ public class ZaposleniController {
     )
     public Collection<Zaposleni> getAll() {
         return zaposleniService.getAll();
+    }
+
+    @GetMapping(
+            value = "/getZaposleniWithFirmaId/{idFirme}"
+    )
+    public Collection<Zaposleni> getZaposleniWithFirmaId(@PathVariable("idFirme") Long idFirme) {
+        return zaposleniService.getZaposleniWithFirmaId(idFirme);
     }
 
     @PostMapping(

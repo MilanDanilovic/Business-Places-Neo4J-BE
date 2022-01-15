@@ -1,6 +1,5 @@
 package com.naprednebaze.k4ktusneo4jnaprednebaze.controller;
 
-import com.naprednebaze.k4ktusneo4jnaprednebaze.dto.ProjekatDTO;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Projekat;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.service.ProjekatService;
 import org.springframework.http.HttpStatus;
@@ -25,13 +24,20 @@ public class ProjekatController {
         return projekatService.getAll();
     }
 
+    @GetMapping(
+            value = "/getProjekatWithFirmaId/{idFirme}"
+    )
+    public Collection<Projekat> getProjekatWithFirmaId(@PathVariable("idFirme") Long idFirme) {
+        return projekatService.getProjekatWithFirmaId(idFirme);
+    }
+
     @PostMapping(
             value = "/addProjekat/{pib}/{datum_od}/{datum_do}",
             produces = {"application/json"}
     )
-    public HttpStatus addProjekat(@PathVariable("pib") Long pib, @PathVariable("datum_od") String datum_od, @PathVariable("datum_do") String datum_do, @RequestBody(required = true) ProjekatDTO projekatDTO) {
+    public HttpStatus addProjekat(@PathVariable("pib") Long pib, @PathVariable("datum_od") String datum_od, @PathVariable("datum_do") String datum_do, @RequestBody(required = true) Projekat projekat) {
         try {
-            projekatService.addProjekat(pib, datum_od, datum_do, projekatDTO);
+            projekatService.addProjekat(pib, datum_od, datum_do, projekat);
         } catch (RuntimeException e) {
             return HttpStatus.BAD_REQUEST;
         }
@@ -42,9 +48,9 @@ public class ProjekatController {
             value = "/deleteProjekat",
             produces = {"application/json"}
     )
-    public HttpStatus deleteProjekat(@RequestBody(required = true) ProjekatDTO projekatDTO) {
+    public HttpStatus deleteProjekat(@RequestBody(required = true) Projekat projekat) {
         try {
-            projekatService.deleteProjekat(projekatDTO);
+            projekatService.deleteProjekat(projekat);
         } catch (RuntimeException e) {
             return HttpStatus.BAD_REQUEST;
         }
