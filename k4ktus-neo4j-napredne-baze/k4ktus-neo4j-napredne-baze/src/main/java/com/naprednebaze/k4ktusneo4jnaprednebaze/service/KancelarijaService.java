@@ -1,21 +1,28 @@
 package com.naprednebaze.k4ktusneo4jnaprednebaze.service;
 
+import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Firma;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Kancelarija;
+import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.FirmaRepository;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.KancelarijaRepository;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.SadrziRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.List;
 
 @Service
 public class KancelarijaService {
 
     private KancelarijaRepository kancelarijaRepository;
     private SadrziRepository sadrziRepository;
+    private FirmaRepository firmaRepository;
+    private FirmaService firmaService;
 
-    public KancelarijaService(KancelarijaRepository kancelarijaRepository, SadrziRepository sadrziRepository) {
+    public KancelarijaService(KancelarijaRepository kancelarijaRepository, SadrziRepository sadrziRepository, FirmaRepository firmaRepository, FirmaService firmaService) {
         this.kancelarijaRepository = kancelarijaRepository;
         this.sadrziRepository = sadrziRepository;
+        this.firmaRepository = firmaRepository;
+        this.firmaService = firmaService;
     }
 
     public Collection<Kancelarija> getAll() {
@@ -36,6 +43,12 @@ public class KancelarijaService {
     }
 
     public void deleteKancelarija(Kancelarija kancelarija) {
+        List<Firma> firmaList = (List<Firma>) firmaRepository.getFirmaWithKancelarijaId(kancelarija.getId());
+
+        for (int i=0; i< firmaList.size(); i++) {
+            firmaService.deleteFirma(firmaList.get(i));
+        }
+
         kancelarijaRepository.deleteKancelarija(kancelarija.getId());
     }
 

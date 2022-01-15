@@ -32,7 +32,7 @@ public class FirmaService {
     }
 
     public void addFirma(String datum_od, String datum_do, Long broj_kancelarije, Firma firma) {
-        firmaRepository.addFirma(firma.getNaziv(), firma.getGodisnja_zarada(), firma.getPib(), firma.getDatum_osnivanja());
+        firmaRepository.addFirma(firma.getNaziv(), firma.getGodisnja_zarada(), firma.getPib(), firma.getDatum_osnivanja(), firma.getIdKancelarije());
         iznajmljujeRepository.addIznajmljuje(datum_od, datum_do, broj_kancelarije, firma.getPib());
     }
 
@@ -57,5 +57,9 @@ public class FirmaService {
 
     public void deleteAllFirma() {
         firmaRepository.deleteAllFirma();
+    }
+
+    public Collection<Firma> getFirmaWithKancelarijaId(Long idKancelarije) {
+        return firmaRepository.getFirmaWithKancelarijaId(idKancelarije);
     }
 }
