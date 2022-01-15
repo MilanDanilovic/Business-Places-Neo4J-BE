@@ -12,8 +12,8 @@ public interface PoslovniProstorRepository extends Neo4jRepository<PoslovniProst
     @Query("MATCH (n:PoslovniProstor) RETURN n")
     Collection<PoslovniProstor> getAllPoslovniProstor();
 
-    @Query("CREATE(Zgrada:PoslovniProstor {kvadratura: $kvadratura, adresa: $adresa})")
-    void addPoslovniProstor(@Param("kvadratura") Double kvadratura, @Param("adresa") String adresa);
+    @Query("CREATE(Zgrada:PoslovniProstor {kvadratura: $kvadratura, adresa: $adresa, idVlasnika:$idVlasnika})")
+    void addPoslovniProstor(@Param("kvadratura") Double kvadratura, @Param("adresa") String adresa, @Param("idVlasnika") Long idVlasnika);
 
     @Query("MATCH (n:PoslovniProstor)\n" +
             "WHERE id(n) = $id\n" +
@@ -28,4 +28,9 @@ public interface PoslovniProstorRepository extends Neo4jRepository<PoslovniProst
     @Query("MATCH (n:PoslovniProstor)\n" +
             "DETACH DELETE n")
     void deleteAllPoslovniProstor();
+
+    @Query("MATCH (n:PoslovniProstor)\n" +
+            "WHERE n.idVlasnika=$idVlasnika\n" +
+            "RETURN n")
+    Collection<PoslovniProstor> getPoslovniProstorWithVlasnikId(@Param("ididVlasnika") Long idVlasnika);
 }

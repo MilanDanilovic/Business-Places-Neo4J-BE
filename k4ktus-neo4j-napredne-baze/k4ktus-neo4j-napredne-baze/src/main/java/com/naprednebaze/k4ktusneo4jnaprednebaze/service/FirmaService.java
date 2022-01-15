@@ -8,7 +8,6 @@ import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.IznajmljujeRepository
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.ProjekatRepository;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.ZaposleniRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.Collection;
 import java.util.List;
 

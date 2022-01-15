@@ -24,6 +24,13 @@ public class PoslovniProstorController {
         return poslovniProstorService.getAll();
     }
 
+    @GetMapping(
+            value = "/getPoslovniProstorWithVlasnikId/{idVlasnika}"
+    )
+    public Collection<PoslovniProstor> getPoslovniProstorWithVlasnikId(@PathVariable("idVlasnika") Long idVlasnika) {
+        return poslovniProstorService.getPoslovniProstorWithVlasnikId(idVlasnika);
+    }
+
     @PostMapping(
             value = "/addPoslovniProstor",
             produces = {"application/json"}

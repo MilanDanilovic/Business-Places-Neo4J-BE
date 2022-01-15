@@ -30,7 +30,7 @@ public class PoslovniProstorService {
     }
 
     public void addPoslovniProstor(PoslovniProstor poslovniProstor, Long jmbg, String datum_kupovine) {
-        poslovniProstorRepository.addPoslovniProstor(poslovniProstor.getKvadratura(), poslovniProstor.getAdresa());
+        poslovniProstorRepository.addPoslovniProstor(poslovniProstor.getKvadratura(), poslovniProstor.getAdresa(), poslovniProstor.getIdVlasnika());
         posedujeRepository.addPoseduje(datum_kupovine, jmbg, poslovniProstor.getAdresa());
     }
 
@@ -50,5 +50,9 @@ public class PoslovniProstorService {
 
     public void deleteAllPoslovniProstor() {
         poslovniProstorRepository.deleteAllPoslovniProstor();
+    }
+
+    public Collection<PoslovniProstor> getPoslovniProstorWithVlasnikId(Long idVlasnika) {
+        return poslovniProstorRepository.getPoslovniProstorWithVlasnikId(idVlasnika);
     }
 }

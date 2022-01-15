@@ -1,6 +1,5 @@
 package com.naprednebaze.k4ktusneo4jnaprednebaze.controller;
 
-import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Firma;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Vlasnik;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.service.VlasnikService;
 import org.springframework.http.HttpStatus;

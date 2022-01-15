@@ -1,6 +1,5 @@
 package com.naprednebaze.k4ktusneo4jnaprednebaze.service;
 
-import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Projekat;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Zaposleni;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.RadeRepository;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.ZaposleniRepository;

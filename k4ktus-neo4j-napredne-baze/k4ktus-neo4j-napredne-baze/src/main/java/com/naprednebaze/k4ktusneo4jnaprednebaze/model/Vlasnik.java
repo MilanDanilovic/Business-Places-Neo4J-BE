@@ -2,9 +2,7 @@ package com.naprednebaze.k4ktusneo4jnaprednebaze.model;
 
 import lombok.Data;
 import org.springframework.data.neo4j.core.schema.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Data
