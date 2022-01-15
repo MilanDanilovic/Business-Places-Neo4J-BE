@@ -45,10 +45,10 @@ public class KancelarijaController {
     }
 
     @PostMapping(
-            value = "/addKancelarija/{adresa}",
+            value = "/addKancelarija",
             produces = {"application/json"}
     )
-    public HttpStatus addKancelarija(@PathVariable("adresa") String adresa, @RequestBody(required = true) Kancelarija kancelarija) {
+    public HttpStatus addKancelarija(@RequestParam("adresa") String adresa, @RequestBody(required = true) Kancelarija kancelarija) {
         try {
             kancelarijaService.addKancelarija(adresa, kancelarija);
         } catch (RuntimeException e) {
