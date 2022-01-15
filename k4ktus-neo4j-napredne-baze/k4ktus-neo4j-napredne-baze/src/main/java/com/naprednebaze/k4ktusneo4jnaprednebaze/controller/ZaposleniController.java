@@ -26,10 +26,10 @@ public class ZaposleniController {
     }
 
     @PostMapping(
-            value = "/addZaposleni/{datum_od}/{datum_do}/{pozicija}/{pib}",
+            value = "/addZaposleni",
             produces = {"application/json"}
     )
-    public HttpStatus addZaposleni(@PathVariable("datum_od") String datum_od, @PathVariable("datum_do") String datum_do, @PathVariable("pozicija") String pozicija, @PathVariable("pib") Long pib, @RequestBody(required = true) Zaposleni zaposleni) {
+    public HttpStatus addZaposleni(@RequestParam("datum_od") String datum_od, @RequestParam("datum_do") String datum_do, @RequestParam("pozicija") String pozicija, @RequestParam("pib") Long pib, @RequestBody(required = true) Zaposleni zaposleni) {
         try {
             zaposleniService.addZaposleni(datum_od, datum_do, pozicija, pib, zaposleni);
         } catch (RuntimeException e) {
