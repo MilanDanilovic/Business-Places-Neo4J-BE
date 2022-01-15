@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7981f6cb-9bf9-4999-94ab-1b96bd4fd455" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.counts.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.counts.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.indexstats.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.indexstats.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.labelscanstore.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.labelscanstore.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.labeltokenstore.db.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.labeltokenstore.db.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.labeltokenstore.db.names.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.labeltokenstore.db.names.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.nodestore.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.nodestore.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.nodestore.db.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.nodestore.db.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.nodestore.db.labels.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.nodestore.db.labels.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.propertystore.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.propertystore.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.propertystore.db.arrays.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.propertystore.db.arrays.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.propertystore.db.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.propertystore.db.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.propertystore.db.index.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.propertystore.db.index.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.propertystore.db.index.keys.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.propertystore.db.index.keys.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.propertystore.db.strings.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.propertystore.db.strings.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.relationshipgroupstore.db.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.relationshipgroupstore.db.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.relationshipgroupstore.degrees.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.relationshipgroupstore.degrees.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.relationshipstore.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.relationshipstore.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.relationshipstore.db.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.relationshipstore.db.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.relationshiptypescanstore.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.relationshiptypescanstore.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.relationshiptypestore.db.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.relationshiptypestore.db.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.relationshiptypestore.db.names.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.relationshiptypestore.db.names.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/neo4j/neostore.schemastore.db.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/neo4j/neostore.schemastore.db.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.counts.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.counts.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.indexstats.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.indexstats.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.labelscanstore.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.labelscanstore.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.labeltokenstore.db.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.labeltokenstore.db.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.labeltokenstore.db.names.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.labeltokenstore.db.names.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.nodestore.db.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.nodestore.db.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.nodestore.db.labels.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.nodestore.db.labels.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.propertystore.db.arrays.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.propertystore.db.arrays.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.propertystore.db.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.propertystore.db.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.propertystore.db.index.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.propertystore.db.index.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.propertystore.db.index.keys.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.propertystore.db.index.keys.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.propertystore.db.strings.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.propertystore.db.strings.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.relationshipgroupstore.db.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.relationshipgroupstore.db.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.relationshipgroupstore.degrees.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.relationshipgroupstore.degrees.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.relationshipstore.db.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.relationshipstore.db.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.relationshiptypescanstore.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.relationshiptypescanstore.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.relationshiptypestore.db.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.relationshiptypestore.db.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.relationshiptypestore.db.names.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.relationshiptypestore.db.names.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/neostore.schemastore.db.id" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/neostore.schemastore.db.id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/schema/index/native-btree-1.0/3/index-3" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/schema/index/native-btree-1.0/3/index-3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/schema/index/native-btree-1.0/4/index-4" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/schema/index/native-btree-1.0/4/index-4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/databases/system/schema/index/native-btree-1.0/7/index-7" beforeDir="false" afterPath="$PROJECT_DIR$/data/databases/system/schema/index/native-btree-1.0/7/index-7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/transactions/neo4j/checkpoint.0" beforeDir="false" afterPath="$PROJECT_DIR$/data/transactions/neo4j/checkpoint.0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug.log" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="23hjtgJlZaCj15SBG6Ym00UHBsB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7981f6cb-9bf9-4999-94ab-1b96bd4fd455" name="Changes" comment="" />
+      <created>1642193428875</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1642193428875</updated>
+      <workItem from="1642193430460" duration="8000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

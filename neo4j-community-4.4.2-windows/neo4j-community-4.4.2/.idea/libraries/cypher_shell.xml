@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="cypher-shell">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bin/tools/cypher-shell.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

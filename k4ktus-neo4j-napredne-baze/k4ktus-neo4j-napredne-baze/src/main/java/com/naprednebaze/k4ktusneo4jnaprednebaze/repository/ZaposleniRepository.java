@@ -12,8 +12,8 @@ public interface ZaposleniRepository extends Neo4jRepository<Zaposleni, Long> {
     @Query("MATCH (n:Zaposleni) RETURN n")
     Collection<Zaposleni> getAllZaposleni();
 
-    @Query("CREATE(Zaposleni:Zaposleni {ime: $ime, prezime: $prezime, datum_rodjenja: $datum_rodjenja, pol: $pol, jmbg: $jmbg, kartica: $kartica})")
-    void addZaposleni(@Param("ime") String ime, @Param("prezime") String prezime, @Param("datum_rodjenja") String datum_rodjenja, @Param("pol") String pol, @Param("jmbg") Long jmbg, @Param("kartica") Long kartica);
+    @Query("CREATE(Zaposleni:Zaposleni {ime: $ime, prezime: $prezime, datum_rodjenja: $datum_rodjenja, pol: $pol, jmbg: $jmbg, kartica: $kartica, idFirme:$idFirme})")
+    void addZaposleni(@Param("ime") String ime, @Param("prezime") String prezime, @Param("datum_rodjenja") String datum_rodjenja, @Param("pol") String pol, @Param("jmbg") Long jmbg, @Param("kartica") Long kartica, @Param("idFirme") Long idFirme);
 
     @Query("MATCH (n:Zaposleni)\n" +
             "WHERE id(n) = $id\n" +
@@ -28,4 +28,9 @@ public interface ZaposleniRepository extends Neo4jRepository<Zaposleni, Long> {
     @Query("MATCH (n:Zaposleni)\n" +
             "DETACH DELETE n")
     void deleteAllZaposleni();
+
+    @Query("MATCH (n:Zaposleni)\n" +
+            "WHERE n.idFirme=$idFirme\n" +
+            "RETURN n")
+    Collection<Zaposleni> getZaposleniWithFirmaId(@Param("idFirme") Long idFirme);
 }

@@ -1,21 +1,25 @@
 package com.naprednebaze.k4ktusneo4jnaprednebaze.model;
 
 import lombok.Data;
+import org.neo4j.ogm.annotation.EndNode;
+import org.neo4j.ogm.annotation.RelationshipEntity;
+import org.neo4j.ogm.annotation.StartNode;
 import org.springframework.data.neo4j.core.schema.*;
 
 @Data
 @RelationshipProperties
+@RelationshipEntity("Poseduje")
 public class Poseduje {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    @TargetNode
-    private final PoslovniProstor poslovniProstor;
-
     @Property
     private String datum_kupovine;
+
+    @TargetNode
+    private PoslovniProstor poslovniProstor;
 
     public Poseduje(PoslovniProstor poslovniProstor, String datum_kupovine) {
         this.id = null;

@@ -3,6 +3,8 @@ package com.naprednebaze.k4ktusneo4jnaprednebaze.model;
 import lombok.Data;
 import org.springframework.data.neo4j.core.schema.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Data
@@ -20,6 +22,8 @@ public class Vlasnik {
     @Relationship(type = "Poseduje" , direction = Relationship.Direction.OUTGOING)
     private List<PoslovniProstor> poslovniProstori;
 
+
+
     public Vlasnik(String ime, String prezime,String datum_rodjenja, Long jmbg, String broj_telefona, List<PoslovniProstor> poslovniProstori) {
         this.id = null;
         this.ime = ime;
@@ -35,6 +39,14 @@ public class Vlasnik {
             It creates a new entity and sets the field accordingly, without modifying the original entity,
             thus making it immutable.
      */
+
+    public void addPoslovniProstor(PoslovniProstor poslovniProstor){
+        if(this.poslovniProstori == null){
+            this.poslovniProstori = new ArrayList<>();
+        }
+        this.poslovniProstori.add(poslovniProstor);
+    }
+
     public Vlasnik withId(Long id) {
         if (this.id.equals(id)) {
             return this;
