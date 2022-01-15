@@ -1,6 +1,5 @@
 package com.naprednebaze.k4ktusneo4jnaprednebaze.service;
 
-import com.naprednebaze.k4ktusneo4jnaprednebaze.dto.PoslovniProstorDTO;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.model.PoslovniProstor;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.PosedujeRepository;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.PoslovniProstorRepository;
@@ -23,17 +22,17 @@ public class PoslovniProstorService {
         return poslovniProstorRepository.getAllPoslovniProstor();
     }
 
-    public void addPoslovniProstor(PoslovniProstorDTO noviPoslovniProstorDTO, Long jmbg, String datum_kupovine) {
-        poslovniProstorRepository.addPoslovniProstor(noviPoslovniProstorDTO.getKvadratura(), noviPoslovniProstorDTO.getAdresa());
-        posedujeRepository.addPoseduje(datum_kupovine, jmbg, noviPoslovniProstorDTO.getAdresa());
+    public void addPoslovniProstor(PoslovniProstor poslovniProstor, Long jmbg, String datum_kupovine) {
+        poslovniProstorRepository.addPoslovniProstor(poslovniProstor.getKvadratura(), poslovniProstor.getAdresa());
+        posedujeRepository.addPoseduje(datum_kupovine, jmbg, poslovniProstor.getAdresa());
     }
 
-    public void deletePoslovniProstor(PoslovniProstorDTO noviPoslovniProstorDTO) {
-        poslovniProstorRepository.deletePoslovniProstor(noviPoslovniProstorDTO.getId());
+    public void deletePoslovniProstor(PoslovniProstor poslovniProstor) {
+        poslovniProstorRepository.deletePoslovniProstor(poslovniProstor.getId());
     }
 
-    public void updatePoslovniProstor(PoslovniProstorDTO noviPoslovniProstorDTO) {
-        poslovniProstorRepository.updatePoslovniProstor(noviPoslovniProstorDTO.getId(), noviPoslovniProstorDTO.getKvadratura(), noviPoslovniProstorDTO.getAdresa());
+    public void updatePoslovniProstor(PoslovniProstor poslovniProstor) {
+        poslovniProstorRepository.updatePoslovniProstor(poslovniProstor.getId(), poslovniProstor.getKvadratura(), poslovniProstor.getAdresa());
     }
 
     public void deleteAllPoslovniProstor() {

@@ -1,6 +1,5 @@
 package com.naprednebaze.k4ktusneo4jnaprednebaze.controller;
 
-import com.naprednebaze.k4ktusneo4jnaprednebaze.dto.KancelarijaDTO;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Kancelarija;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.service.KancelarijaService;
 import org.springframework.http.HttpStatus;
@@ -42,9 +41,9 @@ public class KancelarijaController {
             value = "/addKancelarija/{adresa}",
             produces = {"application/json"}
     )
-    public HttpStatus addKancelarija(@PathVariable("adresa") String adresa, @RequestBody(required = true) KancelarijaDTO kancelarijaDTO) {
+    public HttpStatus addKancelarija(@PathVariable("adresa") String adresa, @RequestBody(required = true) Kancelarija kancelarija) {
         try {
-            kancelarijaService.addKancelarija(adresa, kancelarijaDTO);
+            kancelarijaService.addKancelarija(adresa, kancelarija);
         } catch (RuntimeException e) {
             return HttpStatus.BAD_REQUEST;
         }
@@ -94,7 +93,7 @@ public class KancelarijaController {
             value = "/updateStatusKancelarija/{id}/{status}",
             produces = {"application/json"}
     )
-    public HttpStatus updateStatusKancelarija(@PathVariable("id") Long id, @PathVariable("status") String status) {
+    public HttpStatus updateStatusKancelarija(@PathVariable("id") Long id, @PathVariable("status") Boolean status) {
         try {
             kancelarijaService.updateStatusKancelarija(id, status);
         } catch (RuntimeException e) {

@@ -19,7 +19,7 @@ public interface KancelarijaRepository extends Neo4jRepository<Kancelarija, Long
     Collection<Kancelarija> getOccupiedKancelarija();
 
     @Query("CREATE(Kancelarija:Kancelarija {broj_kancelarije: $broj_kancelarije, kvadratura: $kvadratura, broj_radnika: $broj_radnika, status: $status})")
-    void addKancelarija(@Param("broj_kancelarije") Long broj_kancelarije, @Param("kvadratura") Double kvadratura, @Param("broj_radnika") Long broj_radnika, @Param("status") String status);
+    void addKancelarija(@Param("broj_kancelarije") Long broj_kancelarije, @Param("kvadratura") Double kvadratura, @Param("broj_radnika") Long broj_radnika, @Param("status") Boolean status);
 
     @Query("MATCH (n:Kancelarija)\n" +
             "WHERE id(n) = $id\n" +
@@ -29,7 +29,7 @@ public interface KancelarijaRepository extends Neo4jRepository<Kancelarija, Long
     @Query("MATCH (n:Kancelarija)\n" +
             "WHERE id(n) = $id\n" +
             "SET n={broj_kancelarije: $noviBroj_kancelarije, kvadratura: $novaKvadratura, broj_radnika: $noviBroj_radnika, status: $noviStatus} \n")
-    void updateKancelarija(@Param("id") Long id, @Param("noviBroj_kancelarije") Long noviBroj_kancelarije, @Param("novaKvadratura") Double novaKvadratura, @Param("noviBroj_radnika") Long noviBroj_radnika, @Param("noviStatus") String noviStatus);
+    void updateKancelarija(@Param("id") Long id, @Param("noviBroj_kancelarije") Long noviBroj_kancelarije, @Param("novaKvadratura") Double novaKvadratura, @Param("noviBroj_radnika") Long noviBroj_radnika, @Param("noviStatus") Boolean noviStatus);
 
     @Query("MATCH (n:Kancelarija)\n" +
             "DETACH DELETE n")
@@ -38,5 +38,5 @@ public interface KancelarijaRepository extends Neo4jRepository<Kancelarija, Long
     @Query("MATCH (n:Kancelarija)\n" +
             "WHERE id(n) = $id\n" +
             "SET n={ status: $noviStatus} \n")
-    void updateStatusKancelarija(@Param("id") Long id, @Param("noviStatus") String noviStatus);
+    void updateStatusKancelarija(@Param("id") Long id, @Param("noviStatus") Boolean noviStatus);
 }

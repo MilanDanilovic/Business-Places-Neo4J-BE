@@ -29,9 +29,9 @@ public class ZaposleniController {
             value = "/addZaposleni/{datum_od}/{datum_do}/{pozicija}/{pib}",
             produces = {"application/json"}
     )
-    public HttpStatus addZaposleni(@PathVariable("datum_od") String datum_od, @PathVariable("datum_do") String datum_do, @PathVariable("pozicija") String pozicija, @PathVariable("pib") Long pib, @RequestBody(required = true) ZaposleniDTO zaposleniDTO) {
+    public HttpStatus addZaposleni(@PathVariable("datum_od") String datum_od, @PathVariable("datum_do") String datum_do, @PathVariable("pozicija") String pozicija, @PathVariable("pib") Long pib, @RequestBody(required = true) Zaposleni zaposleni) {
         try {
-            zaposleniService.addZaposleni(datum_od, datum_do, pozicija, pib, zaposleniDTO);
+            zaposleniService.addZaposleni(datum_od, datum_do, pozicija, pib, zaposleni);
         } catch (RuntimeException e) {
             return HttpStatus.BAD_REQUEST;
         }

@@ -17,7 +17,7 @@ public class KancelarijaDTO {
     private Long broj_radnika;
 
     @JsonProperty("status")
-    private String status;
+    private Boolean status;
 
     public Long getId() {
         return id;
@@ -51,11 +51,11 @@ public class KancelarijaDTO {
         this.broj_radnika = broj_radnika;
     }
 
-    public String getStatus() {
+    public Boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Boolean status) {
         this.status = status;
     }
 }

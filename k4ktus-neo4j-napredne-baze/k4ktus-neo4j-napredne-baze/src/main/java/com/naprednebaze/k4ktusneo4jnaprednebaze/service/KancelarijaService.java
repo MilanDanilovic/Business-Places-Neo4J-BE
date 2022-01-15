@@ -1,6 +1,5 @@
 package com.naprednebaze.k4ktusneo4jnaprednebaze.service;
 
-import com.naprednebaze.k4ktusneo4jnaprednebaze.dto.KancelarijaDTO;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Kancelarija;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.KancelarijaRepository;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.SadrziRepository;
@@ -31,9 +30,9 @@ public class KancelarijaService {
         return kancelarijaRepository.getOccupiedKancelarija();
     }
 
-    public void addKancelarija(String adresa, KancelarijaDTO novaKancelarijaDTO) {
-        kancelarijaRepository.addKancelarija(novaKancelarijaDTO.getBroj_kancelarije(), novaKancelarijaDTO.getKvadratura(), novaKancelarijaDTO.getBroj_radnika(), novaKancelarijaDTO.getStatus());
-        sadrziRepository.addSadrzi(adresa, novaKancelarijaDTO.getBroj_kancelarije());
+    public void addKancelarija(String adresa, Kancelarija kancelarija) {
+        kancelarijaRepository.addKancelarija(kancelarija.getBroj_kancelarije(), kancelarija.getKvadratura(), kancelarija.getBroj_radnika(), kancelarija.getStatus());
+        sadrziRepository.addSadrzi(adresa, kancelarija.getBroj_kancelarije());
     }
 
     public void deleteKancelarija(Kancelarija kancelarija) {
@@ -48,7 +47,7 @@ public class KancelarijaService {
         kancelarijaRepository.deleteAllKancelarija();
     }
 
-    public void updateStatusKancelarija(Long id, String status) {
+    public void updateStatusKancelarija(Long id, Boolean status) {
         kancelarijaRepository.updateStatusKancelarija(id, status);
     }
 }

@@ -23,9 +23,9 @@ public class ZaposleniService {
         return zaposleniRepository.getAllZaposleni();
     }
 
-    public void addZaposleni(String datum_od, String datum_do, String pozicija, Long pib, ZaposleniDTO noviZaposleniDTO) {
-        zaposleniRepository.addZaposleni(noviZaposleniDTO.getIme(), noviZaposleniDTO.getPrezime(), noviZaposleniDTO.getDatum_rodjenja(), noviZaposleniDTO.getPol(), noviZaposleniDTO.getJmbg(), noviZaposleniDTO.getKartica());
-        radeRepository.addRade(datum_od, datum_do, pozicija, pib, noviZaposleniDTO.getJmbg());
+    public void addZaposleni(String datum_od, String datum_do, String pozicija, Long pib, Zaposleni zaposleni) {
+        zaposleniRepository.addZaposleni(zaposleni.getIme(), zaposleni.getPrezime(), zaposleni.getDatum_rodjenja(), zaposleni.getPol(), zaposleni.getJmbg(), zaposleni.getKartica());
+        radeRepository.addRade(datum_od, datum_do, pozicija, pib, zaposleni.getJmbg());
     }
 
     public void deleteZaposleni(Zaposleni zaposleni) {

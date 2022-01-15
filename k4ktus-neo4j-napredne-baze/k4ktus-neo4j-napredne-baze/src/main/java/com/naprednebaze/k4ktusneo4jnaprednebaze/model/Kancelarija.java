@@ -18,7 +18,7 @@ public class Kancelarija {
     private Long broj_kancelarije;
     private Double kvadratura;
     private Long broj_radnika;
-    private String status;
+    private Boolean status;
 
     @Relationship(type = "Iznajmljuje" , direction = Relationship.Direction.OUTGOING)
     private Firma firma;
@@ -27,7 +27,7 @@ public class Kancelarija {
 
     }
 
-    public Kancelarija(Long broj_kancelarije, Double kvadratura, Long broj_radnika, String status) {
+    public Kancelarija(Long broj_kancelarije, Double kvadratura, Long broj_radnika, Boolean status) {
         this.id = null;
         this.broj_kancelarije = broj_kancelarije;
         this.kvadratura = kvadratura;
