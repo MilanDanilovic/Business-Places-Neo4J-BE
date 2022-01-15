@@ -10,12 +10,11 @@ import java.util.Collection;
 
 public interface FirmaRepository extends Neo4jRepository<Firma, Long> {
 
-    //@Query("MATCH p = (f:Firma)-[r:Rade]->(z:Zaposleni) RETURN p")
     @Query("MATCH (n:Firma) return n")
     Collection<Firma> getAllFirma();
 
-    @Query("CREATE(Firma:Firma {naziv: $naziv, godisnja_zarada: $godisnja_zarada, pib: $pib, datum_osnivanja:$datum_osnivanja})")
-    void addFirma(@Param("naziv") String naziv, @Param("godisnja_zarada") Double godisnja_zarada, @Param("pib") Long pib, @Param("datum_osnivanja") String datum_osnivanja);
+    @Query("CREATE(Firma:Firma {naziv: $naziv, godisnja_zarada: $godisnja_zarada, pib: $pib, datum_osnivanja:$datum_osnivanja, idKancelarije:$idKancelarije})")
+    void addFirma(@Param("naziv") String naziv, @Param("godisnja_zarada") Double godisnja_zarada, @Param("pib") Long pib, @Param("datum_osnivanja") String datum_osnivanja, @Param("idKancelarije") Long idKancelarije);
 
     @Query("MATCH (n:Firma)\n" +
             "WHERE id(n) = $id\n" +
@@ -30,4 +29,9 @@ public interface FirmaRepository extends Neo4jRepository<Firma, Long> {
     @Query("MATCH (n:Firma)\n" +
             "DETACH DELETE n")
     void deleteAllFirma();
+
+    @Query("MATCH (n:Firma)\n" +
+            "WHERE n.idKancelarije=$idKancelarije\n" +
+            "RETURN n")
+    Collection<Firma> getFirmaWithKancelarijaId(@Param("idKancelarije") Long idKancelarije);
 }

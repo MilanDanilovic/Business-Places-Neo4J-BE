@@ -24,6 +24,13 @@ public class KancelarijaController {
     }
 
     @GetMapping(
+            value = "/getAll/{idPoslovnogProstora}"
+    )
+    public Collection<Kancelarija> getKancelarijaWithPoslovniProstorId(@PathVariable("idPoslovnogProstora") Long idPoslovnogProstora) {
+        return kancelarijaService.getKancelarijaWithPoslovniProstorId(idPoslovnogProstora);
+    }
+
+    @GetMapping(
             value = "/getEmpty"
     )
     public Collection<Kancelarija> getEmpty() {

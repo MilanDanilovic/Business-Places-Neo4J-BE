@@ -23,6 +23,13 @@ public class FirmaController {
         return firmaService.getAll();
     }
 
+    @GetMapping(
+            value = "/getFirmaWithKancelarijaId/{idKancelarije}"
+    )
+    public Collection<Firma> getFirmaWithKancelarijaId(@PathVariable("idKancelarije") Long idKancelarije) {
+        return firmaService.getFirmaWithKancelarijaId(idKancelarije);
+    }
+
     @PostMapping(
             value = "/addFirma/{datum_od}/{datum_do}/{broj_kancelarije}",
             produces = {"application/json"}
