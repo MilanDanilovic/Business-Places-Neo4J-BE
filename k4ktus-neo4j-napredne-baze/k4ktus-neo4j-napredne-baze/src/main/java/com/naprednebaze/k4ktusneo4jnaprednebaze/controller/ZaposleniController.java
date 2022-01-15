@@ -42,9 +42,9 @@ public class ZaposleniController {
             value = "/deleteZaposleni",
             produces = {"application/json"}
     )
-    public HttpStatus deleteZaposleni(@RequestBody(required = true) ZaposleniDTO zaposleniDTO) {
+    public HttpStatus deleteZaposleni(@RequestBody(required = true) Zaposleni zaposleni) {
         try {
-            zaposleniService.deleteZaposleni(zaposleniDTO);
+            zaposleniService.deleteZaposleni(zaposleni);
         } catch (RuntimeException e) {
             return HttpStatus.BAD_REQUEST;
         }
@@ -55,9 +55,9 @@ public class ZaposleniController {
             value = "/updateZaposleni",
             produces = {"application/json"}
     )
-    public HttpStatus updateZaposleni(@RequestBody(required = true) ZaposleniDTO zaposleniDTO) {
+    public HttpStatus updateZaposleni(@RequestBody(required = true) Zaposleni zaposleni) {
         try {
-            zaposleniService.updateZaposleni(zaposleniDTO);
+            zaposleniService.updateZaposleni(zaposleni);
         } catch (RuntimeException e) {
             return HttpStatus.BAD_REQUEST;
         }

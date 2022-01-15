@@ -28,12 +28,12 @@ public class ZaposleniService {
         radeRepository.addRade(datum_od, datum_do, pozicija, pib, noviZaposleniDTO.getJmbg());
     }
 
-    public void deleteZaposleni(ZaposleniDTO noviZaposleniDTO) {
-        zaposleniRepository.deleteZaposleni(noviZaposleniDTO.getId());
+    public void deleteZaposleni(Zaposleni zaposleni) {
+        zaposleniRepository.deleteZaposleni(zaposleni.getId());
     }
 
-    public void updateZaposleni(ZaposleniDTO noviZaposleniDTO) {
-        zaposleniRepository.updateZaposleni(noviZaposleniDTO.getId(), noviZaposleniDTO.getIme(), noviZaposleniDTO.getPrezime(), noviZaposleniDTO.getDatum_rodjenja(), noviZaposleniDTO.getPol(), noviZaposleniDTO.getJmbg(), noviZaposleniDTO.getKartica());
+    public void updateZaposleni(Zaposleni zaposleni) {
+        zaposleniRepository.updateZaposleni(zaposleni.getId(), zaposleni.getIme(), zaposleni.getPrezime(), zaposleni.getDatum_rodjenja(), zaposleni.getPol(), zaposleni.getJmbg(), zaposleni.getKartica());
     }
 
     public void deleteAllZaposleni() {

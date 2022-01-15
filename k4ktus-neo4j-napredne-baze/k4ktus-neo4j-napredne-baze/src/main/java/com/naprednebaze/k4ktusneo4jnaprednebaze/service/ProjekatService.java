@@ -32,8 +32,8 @@ public class ProjekatService {
         projekatRepository.deleteProjekat(projekatDTO.getId());
     }
 
-    public void updateProjekat(ProjekatDTO projekatDTO) {
-        projekatRepository.updateProjekat(projekatDTO.getId(), projekatDTO.getNaziv(), projekatDTO.getSifra_projekta());
+    public void updateProjekat(Projekat projekat) {
+        projekatRepository.updateProjekat(projekat.getId(), projekat.getNaziv(), projekat.getSifra_projekta());
     }
 
     public void deleteAllProjekat() {

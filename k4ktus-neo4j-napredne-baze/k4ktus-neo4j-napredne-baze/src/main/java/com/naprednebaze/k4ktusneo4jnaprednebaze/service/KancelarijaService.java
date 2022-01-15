@@ -36,12 +36,12 @@ public class KancelarijaService {
         sadrziRepository.addSadrzi(adresa, novaKancelarijaDTO.getBroj_kancelarije());
     }
 
-    public void deleteKancelarija(KancelarijaDTO novaKancelarijaDTO) {
-        kancelarijaRepository.deleteKancelarija(novaKancelarijaDTO.getId());
+    public void deleteKancelarija(Kancelarija kancelarija) {
+        kancelarijaRepository.deleteKancelarija(kancelarija.getId());
     }
 
-    public void updateKancelarija(KancelarijaDTO novaKancelarijaDTO) {
-        kancelarijaRepository.updateKancelarija(novaKancelarijaDTO.getId(), novaKancelarijaDTO.getBroj_kancelarije(), novaKancelarijaDTO.getKvadratura(), novaKancelarijaDTO.getBroj_radnika(), novaKancelarijaDTO.getStatus());
+    public void updateKancelarija(Kancelarija kancelarija) {
+        kancelarijaRepository.updateKancelarija(kancelarija.getId(), kancelarija.getBroj_kancelarije(), kancelarija.getKvadratura(), kancelarija.getBroj_radnika(), kancelarija.getStatus());
     }
 
     public void deleteAllKancelarija() {

@@ -55,9 +55,9 @@ public class ProjekatController {
             value = "/updateProjekat",
             produces = {"application/json"}
     )
-    public HttpStatus updateProjekat(@RequestBody(required = true) ProjekatDTO projekatDTO) {
+    public HttpStatus updateProjekat(@RequestBody(required = true) Projekat projekat) {
         try {
-            projekatService.updateProjekat(projekatDTO);
+            projekatService.updateProjekat(projekat);
         } catch (RuntimeException e) {
             return HttpStatus.BAD_REQUEST;
         }

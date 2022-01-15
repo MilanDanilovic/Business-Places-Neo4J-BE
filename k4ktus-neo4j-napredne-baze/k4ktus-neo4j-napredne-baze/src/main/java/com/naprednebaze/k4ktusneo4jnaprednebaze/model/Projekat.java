@@ -1,8 +1,10 @@
 package com.naprednebaze.k4ktusneo4jnaprednebaze.model;
 
+import lombok.Data;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 
+@Data
 public class Projekat {
     @Id
     @GeneratedValue

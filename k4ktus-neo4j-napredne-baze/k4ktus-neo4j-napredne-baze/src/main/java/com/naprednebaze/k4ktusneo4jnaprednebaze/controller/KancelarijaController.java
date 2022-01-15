@@ -55,9 +55,9 @@ public class KancelarijaController {
             value = "/deleteKancelarija",
             produces = {"application/json"}
     )
-    public HttpStatus deleteKancelarija(@RequestBody(required = true) KancelarijaDTO kancelarijaDTO) {
+    public HttpStatus deleteKancelarija(@RequestBody(required = true) Kancelarija kancelarija) {
         try {
-            kancelarijaService.deleteKancelarija(kancelarijaDTO);
+            kancelarijaService.deleteKancelarija(kancelarija);
         } catch (RuntimeException e) {
             return HttpStatus.BAD_REQUEST;
         }
@@ -68,9 +68,9 @@ public class KancelarijaController {
             value = "/updateKancelarija",
             produces = {"application/json"}
     )
-    public HttpStatus updateKancelarija(@RequestBody(required = true) KancelarijaDTO kancelarijaDTO) {
+    public HttpStatus updateKancelarija(@RequestBody(required = true) Kancelarija kancelarija) {
         try {
-            kancelarijaService.updateKancelarija(kancelarijaDTO);
+            kancelarijaService.updateKancelarija(kancelarija);
         } catch (RuntimeException e) {
             return HttpStatus.BAD_REQUEST;
         }
