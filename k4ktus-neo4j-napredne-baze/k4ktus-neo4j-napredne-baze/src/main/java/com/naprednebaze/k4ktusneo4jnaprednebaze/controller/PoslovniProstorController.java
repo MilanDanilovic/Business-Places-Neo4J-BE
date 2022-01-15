@@ -35,7 +35,7 @@ public class PoslovniProstorController {
             value = "/addPoslovniProstor",
             produces = {"application/json"}
     )
-    public HttpStatus addPoslovniProstor(Long jmbg, String datum_kupovine, @RequestBody(required = true) PoslovniProstor poslovniProstor) {
+    public HttpStatus addPoslovniProstor(@RequestParam("jmbg") Long jmbg,@RequestParam("datum_kupovine") String datum_kupovine, @RequestBody(required = true) PoslovniProstor poslovniProstor) {
         try {
             poslovniProstorService.addPoslovniProstor(poslovniProstor, jmbg, datum_kupovine);
         } catch (RuntimeException e) {
