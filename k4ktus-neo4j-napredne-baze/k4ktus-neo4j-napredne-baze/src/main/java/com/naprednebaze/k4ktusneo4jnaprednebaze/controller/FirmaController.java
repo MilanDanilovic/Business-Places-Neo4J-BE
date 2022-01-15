@@ -31,10 +31,10 @@ public class FirmaController {
     }
 
     @PostMapping(
-            value = "/addFirma/{datum_od}/{datum_do}/{broj_kancelarije}",
+            value = "/addFirma",
             produces = {"application/json"}
     )
-    public HttpStatus addFirma(@PathVariable("datum_od") String datum_od, @PathVariable("datum_do") String datum_do, @PathVariable("broj_kancelarije") Long broj_kancelarije, @RequestBody(required = true) Firma firma) {
+    public HttpStatus addFirma(@RequestParam("datum_od") String datum_od, @RequestParam("datum_do") String datum_do, @RequestParam("broj_kancelarije") Long broj_kancelarije, @RequestBody(required = true) Firma firma) {
         try {
             firmaService.addFirma(datum_od, datum_do, broj_kancelarije, firma);
         } catch (RuntimeException e) {
