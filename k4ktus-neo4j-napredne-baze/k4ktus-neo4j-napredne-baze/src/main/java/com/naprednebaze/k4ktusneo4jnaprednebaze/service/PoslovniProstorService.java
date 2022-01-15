@@ -1,21 +1,28 @@
 package com.naprednebaze.k4ktusneo4jnaprednebaze.service;
 
+import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Kancelarija;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.model.PoslovniProstor;
+import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.KancelarijaRepository;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.PosedujeRepository;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.repository.PoslovniProstorRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.List;
 
 @Service
 public class PoslovniProstorService {
 
     private PoslovniProstorRepository poslovniProstorRepository;
     private PosedujeRepository posedujeRepository;
+    private KancelarijaService kancelarijaService;
+    private KancelarijaRepository kancelarijaRepository;
 
-    public PoslovniProstorService(PoslovniProstorRepository poslovniProstorRepository, PosedujeRepository posedujeRepository) {
+    public PoslovniProstorService(PoslovniProstorRepository poslovniProstorRepository, PosedujeRepository posedujeRepository, KancelarijaService kancelarijaService, KancelarijaRepository kancelarijaRepository) {
         this.poslovniProstorRepository = poslovniProstorRepository;
         this.posedujeRepository = posedujeRepository;
+        this.kancelarijaService = kancelarijaService;
+        this.kancelarijaRepository = kancelarijaRepository;
     }
 
     public Collection<PoslovniProstor> getAll() {
@@ -28,6 +35,12 @@ public class PoslovniProstorService {
     }
 
     public void deletePoslovniProstor(PoslovniProstor poslovniProstor) {
+        List<Kancelarija> kancelarijaList = (List<Kancelarija>) kancelarijaRepository.getKancelarijaWithPoslovniProstorId(poslovniProstor.getId());
+
+        for (int i=0; i<kancelarijaList.size(); i++) {
+            kancelarijaService.deleteKancelarija(kancelarijaList.get(i));
+        }
+
         poslovniProstorRepository.deletePoslovniProstor(poslovniProstor.getId());
     }
 

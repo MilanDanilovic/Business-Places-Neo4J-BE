@@ -19,6 +19,7 @@ public class Kancelarija {
     private Double kvadratura;
     private Long broj_radnika;
     private Boolean status;
+    private Long idPoslovnogProstora;
 
     @Relationship(type = "Iznajmljuje" , direction = Relationship.Direction.OUTGOING)
     private Firma firma;
@@ -27,19 +28,20 @@ public class Kancelarija {
 
     }
 
-    public Kancelarija(Long broj_kancelarije, Double kvadratura, Long broj_radnika, Boolean status) {
+    public Kancelarija(Long broj_kancelarije, Double kvadratura, Long broj_radnika, Boolean status, Long idPoslovnogProstora) {
         this.id = null;
         this.broj_kancelarije = broj_kancelarije;
         this.kvadratura = kvadratura;
         this.broj_radnika = broj_radnika;
         this.status = status;
+        this.idPoslovnogProstora = idPoslovnogProstora;
     }
 
     public Kancelarija withId(Long id) {
         if (this.id.equals(id)) {
             return this;
         } else {
-            Kancelarija newObject = new Kancelarija(this.broj_kancelarije, this.kvadratura, this.broj_radnika, this.status);
+            Kancelarija newObject = new Kancelarija(this.broj_kancelarije, this.kvadratura, this.broj_radnika, this.status, this.idPoslovnogProstora);
             newObject.id = id;
             return newObject;
         }

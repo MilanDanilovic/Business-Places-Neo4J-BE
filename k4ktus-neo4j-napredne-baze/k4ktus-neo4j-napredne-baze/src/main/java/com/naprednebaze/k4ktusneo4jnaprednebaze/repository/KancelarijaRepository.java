@@ -1,5 +1,6 @@
 package com.naprednebaze.k4ktusneo4jnaprednebaze.repository;
 
+import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Firma;
 import com.naprednebaze.k4ktusneo4jnaprednebaze.model.Kancelarija;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
@@ -18,8 +19,8 @@ public interface KancelarijaRepository extends Neo4jRepository<Kancelarija, Long
     @Query("MATCH (n:Kancelarija {status: 'true'}) RETURN n.broj_kancelarije ")
     Collection<Kancelarija> getOccupiedKancelarija();
 
-    @Query("CREATE(Kancelarija:Kancelarija {broj_kancelarije: $broj_kancelarije, kvadratura: $kvadratura, broj_radnika: $broj_radnika, status: $status})")
-    void addKancelarija(@Param("broj_kancelarije") Long broj_kancelarije, @Param("kvadratura") Double kvadratura, @Param("broj_radnika") Long broj_radnika, @Param("status") Boolean status);
+    @Query("CREATE(Kancelarija:Kancelarija {broj_kancelarije: $broj_kancelarije, kvadratura: $kvadratura, broj_radnika: $broj_radnika, status: $status, idPoslovnogProstora:$idPoslovnogProstora})")
+    void addKancelarija(@Param("broj_kancelarije") Long broj_kancelarije, @Param("kvadratura") Double kvadratura, @Param("broj_radnika") Long broj_radnika, @Param("status") Boolean status, @Param("idPoslovnogProstora") Long idPoslovnogProstora);
 
     @Query("MATCH (n:Kancelarija)\n" +
             "WHERE id(n) = $id\n" +
@@ -39,4 +40,9 @@ public interface KancelarijaRepository extends Neo4jRepository<Kancelarija, Long
             "WHERE id(n) = $id\n" +
             "SET n={ status: $noviStatus} \n")
     void updateStatusKancelarija(@Param("id") Long id, @Param("noviStatus") Boolean noviStatus);
+
+    @Query("MATCH (n:Kancelarija)\n" +
+            "WHERE n.idPoslovnogProstora=$idPoslovnogProstora\n" +
+            "RETURN n")
+    Collection<Kancelarija> getKancelarijaWithPoslovniProstorId(@Param("idPoslovnogProstora") Long idPoslovnogProstora);
 }

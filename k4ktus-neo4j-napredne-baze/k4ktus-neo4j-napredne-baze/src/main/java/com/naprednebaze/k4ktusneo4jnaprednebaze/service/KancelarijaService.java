@@ -38,7 +38,7 @@ public class KancelarijaService {
     }
 
     public void addKancelarija(String adresa, Kancelarija kancelarija) {
-        kancelarijaRepository.addKancelarija(kancelarija.getBroj_kancelarije(), kancelarija.getKvadratura(), kancelarija.getBroj_radnika(), kancelarija.getStatus());
+        kancelarijaRepository.addKancelarija(kancelarija.getBroj_kancelarije(), kancelarija.getKvadratura(), kancelarija.getBroj_radnika(), kancelarija.getStatus(), kancelarija.getIdPoslovnogProstora());
         sadrziRepository.addSadrzi(adresa, kancelarija.getBroj_kancelarije());
     }
 
@@ -62,5 +62,9 @@ public class KancelarijaService {
 
     public void updateStatusKancelarija(Long id, Boolean status) {
         kancelarijaRepository.updateStatusKancelarija(id, status);
+    }
+
+    public Collection<Kancelarija> getKancelarijaWithPoslovniProstorId(Long idPoslovnogProstora) {
+        return kancelarijaRepository.getKancelarijaWithPoslovniProstorId(idPoslovnogProstora);
     }
 }
